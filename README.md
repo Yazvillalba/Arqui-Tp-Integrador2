@@ -1,0 +1,3 @@
+
+ - Hacer dto para mostrar los datos
+ - EN ELIMINAR ESTUDIANTE SE REPITE CODIGO DE ENTITY MANAGER ES VALIDOO? 
