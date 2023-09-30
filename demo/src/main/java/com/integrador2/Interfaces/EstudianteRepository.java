@@ -9,8 +9,6 @@ public interface EstudianteRepository {
     
     void agregarEstudiante(Estudiante estudiante);
     
-  
-
     List<Estudiante> obtenerTodos();
 
     Estudiante obtenerUnoPorLibreta(int nroLibreta);

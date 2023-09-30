@@ -20,12 +20,12 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String nombreCarrera = carrera.getNombre();
-            String ciudadResidencia = --;
+            // String ciudadResidencia = --;
             String jpql = 
             "SELECT e FROM EstudianteCarrera ec JOIN Estudiante e JOIN Carrera c WHERE c.nombre = :nombreCarrera AND e.ciudad = :ciudadResidencia";
             Query query = em.createQuery(jpql, EstudianteCarrera.class);
            
-
+            return null;
         } finally {
             em.close();
         }
@@ -35,6 +35,19 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
     public void matricularEstudiante(Estudiante estudiante, Carrera carrera) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'matricularEstudiante'");
+    }
+
+    public void agregarEstudianteCarrera(EstudianteCarrera estudianteCarreras) {
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(estudianteCarreras);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
     }
 
 }
