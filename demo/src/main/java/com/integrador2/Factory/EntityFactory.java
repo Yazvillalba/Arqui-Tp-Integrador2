@@ -6,7 +6,7 @@ import jakarta.persistence.Persistence;
 
 public class EntityFactory {
         private final EntityManagerFactory emf;
-
+        private EntityManager em;
         private EntityFactory() {
 
             emf = Persistence.createEntityManagerFactory("integrador2");

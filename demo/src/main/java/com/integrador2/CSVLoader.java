@@ -72,13 +72,25 @@ public class CSVLoader {
         CSVParser parser = this.getParser("demo\\src\\main\\java\\com\\integrador2\\Resources\\estudianteCarrera.csv");
         try {
             for (CSVRecord row : parser) {
-                EstudianteCarrera estudianteCarrera = new EstudianteCarrera(Integer.parseInt(row.get("id_estudiante")), Integer.parseInt(row.get("id_carrera")), Integer.parseInt(row.get("inscripcion")), row.get("graduado").equals("true"),Integer.parseInt(row.get("anioIngreso")));
+                int idEstudiante = Integer.parseInt(row.get("id_estudiante"));
+                int idCarrera = Integer.parseInt(row.get("id_carrera"));
+               
+                Estudiante estudiante = estudianteRepository.obtenerUnoPorLibreta(idEstudiante);
+                Carrera carrera = carreraRepository.obtenerPorId(idCarrera);
+                
+
+                EstudianteCarrera estudianteCarrera = new EstudianteCarrera(Integer.parseInt(row.get("inscripcion")),row.get("graduado").equals("true"),Integer.parseInt(row.get("anioIngreso")));
+                estudianteCarrera.setEstudiante(estudiante);
+                estudianteCarrera.setCarrera(carrera);
+
                 estudianteCarreras.add(estudianteCarrera);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+      
     }
+     
 
     public void insertarEstudiante() {
         for (Estudiante estudiante : estudiantes) {
@@ -96,4 +108,5 @@ public class CSVLoader {
             estudianteCarreraRepository.agregarEstudianteCarrera(estudianteCarrera);
         }
     }
+    /* */
 }

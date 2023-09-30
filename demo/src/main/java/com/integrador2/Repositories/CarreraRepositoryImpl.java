@@ -60,5 +60,19 @@ public class CarreraRepositoryImpl implements CarreraRepository{
             em.close();
         }
     }
-    
+
+    @Override
+    public Carrera obtenerPorId(int id_carrera){
+           EntityManager em = EntityFactory.getInstance().createEntityManager();
+        try {
+            String jpql = "SELECT c FROM Carrera c WHERE c.id =:id_carrera";
+            Query query = em.createQuery(jpql, Estudiante.class);
+            query.setParameter("id_carrera", id_carrera);
+
+            Carrera carrera =  (Carrera) query.getSingleResult();
+            return carrera;
+        } finally {
+            em.close();
+        }
+    }
 }
