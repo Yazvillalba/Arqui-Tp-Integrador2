@@ -20,7 +20,7 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String nombreCarrera = carrera.getNombre();
-            String ciudadResidencia = estudiante.getCiudad();
+            String ciudadResidencia = --;
             String jpql = 
             "SELECT e FROM EstudianteCarrera ec JOIN Estudiante e JOIN Carrera c WHERE c.nombre = :nombreCarrera AND e.ciudad = :ciudadResidencia";
             Query query = em.createQuery(jpql, EstudianteCarrera.class);

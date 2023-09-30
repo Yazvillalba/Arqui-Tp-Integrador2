@@ -19,10 +19,12 @@ public class Carrera {
     private List<EstudianteCarrera> estudiantes;
 
     
-    public Carrera(String nombre, int duracion, List<EstudianteCarrera> estudiantes) {
+   
+
+    public Carrera(String nombre, int duracion) {
         this.nombre = nombre;
         this.duracion = duracion;
-        this.estudiantes = estudiantes;
+
     }
 
     public int getId() {

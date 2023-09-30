@@ -27,7 +27,11 @@ public class EstudianteCarrera {
     private boolean graduado;
     private int antiguedad;
 
-    public EstudianteCarrera(int anioInscripcion, boolean graduado, int antiguedad) {
+    
+    public EstudianteCarrera(Estudiante estudiante, Carrera carrera, int anioInscripcion, boolean graduado,
+            int antiguedad) {
+        this.estudiante = estudiante;
+        this.carrera = carrera;
         this.anioInscripcion = anioInscripcion;
         this.graduado = graduado;
         this.antiguedad = antiguedad;
