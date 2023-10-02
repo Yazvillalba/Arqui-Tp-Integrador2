@@ -68,6 +68,17 @@ public class CSVLoader {
         }
     }
 
+    public void insertarEstudiante() {
+        for (Estudiante estudiante : estudiantes) {
+            estudianteRepository.agregarEstudiante(estudiante);
+        }
+    }
+
+    public void insertarCarrera() {
+        for (Carrera carrera : carreras) {
+            carreraRepository.agregarCarrera(carrera);
+        }
+    }
     public void loadEstudianteCarrera(String filePath) throws IOException {
         CSVParser parser = this.getParser("demo\\src\\main\\java\\com\\integrador2\\Resources\\estudianteCarrera.csv");
         try {
@@ -92,17 +103,6 @@ public class CSVLoader {
     }
      
 
-    public void insertarEstudiante() {
-        for (Estudiante estudiante : estudiantes) {
-            estudianteRepository.agregarEstudiante(estudiante);
-        }
-    }
-
-    public void insertarCarrera() {
-        for (Carrera carrera : carreras) {
-            carreraRepository.agregarCarrera(carrera);
-        }
-    }
     public void insertarEstudianteCarrera() {
         for (EstudianteCarrera estudianteCarrera : estudianteCarreras) {
             estudianteCarreraRepository.agregarEstudianteCarrera(estudianteCarrera);
