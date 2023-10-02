@@ -51,7 +51,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     @Override
     public List<Carrera> obtenerTodas() {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
-        String jpql = "SELECT c FROM Carrera";
+        String jpql = "SELECT c FROM Carrera c";
         try {
             Query query = em.createQuery(jpql);
             List<Carrera> carreras = query.getResultList();
@@ -66,7 +66,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
            EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String jpql = "SELECT c FROM Carrera c WHERE c.id =:id_carrera";
-            Query query = em.createQuery(jpql, Estudiante.class);
+            Query query = em.createQuery(jpql, Carrera.class);
             query.setParameter("id_carrera", id_carrera);
 
             Carrera carrera =  (Carrera) query.getSingleResult();

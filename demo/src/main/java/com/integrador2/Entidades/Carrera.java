@@ -11,7 +11,7 @@ import jakarta.persistence.OneToMany;
 public class Carrera {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_carrera;
     private String nombre;
     private int duracion;
     
@@ -26,9 +26,10 @@ public class Carrera {
         this.duracion = duracion;
 
     }
-
+    public Carrera(){}
+    
     public int getId() {
-        return id;
+        return id_carrera;
     }
 
     public String getNombre() {
@@ -44,7 +45,7 @@ public class Carrera {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_carrera = id_carrera;
     }
 
     public void setNombre(String nombre) {

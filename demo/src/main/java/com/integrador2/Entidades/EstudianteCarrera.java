@@ -16,7 +16,7 @@ public class EstudianteCarrera {
 
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "nroLibreta_estudiante")
+    @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
 
     @ManyToOne(cascade = CascadeType.MERGE)
@@ -24,13 +24,13 @@ public class EstudianteCarrera {
     private Carrera carrera;
 
     private int anioInscripcion;
-    private boolean graduado;
+    private int graduacion;
     private int antiguedad;
 
     
-    public EstudianteCarrera( int anioInscripcion, boolean graduado, int antiguedad) {
+    public EstudianteCarrera( int anioInscripcion, int  graduacion, int antiguedad) {
         this.anioInscripcion = anioInscripcion;
-        this.graduado = graduado;
+        this.graduacion = graduacion;
         this.antiguedad = antiguedad;
     }
     public EstudianteCarrera(){
@@ -67,11 +67,11 @@ public class EstudianteCarrera {
     public void setAntiguedad(int antiguedad) {
         this.antiguedad = antiguedad;
     }
-    public boolean isGraduado() {
-        return graduado;
+    public int isGraduacion() {
+        return graduacion;
     }
-    public void setGraduado(boolean graduado) {
-        this.graduado = graduado;
+    public void setGraduacion(int graduacion) {
+        this.graduacion = graduacion;
     }
 
 }

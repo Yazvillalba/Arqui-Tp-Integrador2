@@ -3,7 +3,9 @@ package com.integrador2;
 import java.io.IOException;
 import java.util.List;
 
+import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
+import com.integrador2.Repositories.CarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteRepositoryImpl;
 
 public class Main {
@@ -16,11 +18,12 @@ public class Main {
 
             loader.insertarEstudiante();
             loader.insertarCarrera();
-            EstudianteRepositoryImpl eImpl = new EstudianteRepositoryImpl();
-            List<Estudiante> estudiantes = eImpl.obtenerTodos();
-            for (Estudiante estudiante : estudiantes) {
-                System.out.println(estudiante.getNombre() + " "+estudiante.getNroLibreta());
-            }
+            // CarreraRepositoryImpl eImpl = new CarreraRepositoryImpl();
+            // List<Carrera> carreras = eImpl.obtenerTodas();
+            // for (Carrera carrera : carreras) {
+            //     System.out.println(carrera.getNombre()+ " "+carrera.getId());
+            // }
+            
             loader.loadEstudianteCarrera("estudianteCarrera.csv");
             loader.insertarEstudianteCarrera();
         } catch (IOException e) {

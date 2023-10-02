@@ -103,5 +103,19 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
             em.close();
         }
     }
+    @Override
+    public Estudiante obtenerPorId(int id_estudiante) {
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+        try {
+            String jpql = "SELECT e FROM Estudiante e WHERE e.dni =:id_estudiante";
+            Query query = em.createQuery(jpql, Estudiante.class);
+            query.setParameter("id_estudiante", id_estudiante);
 
+            Estudiante estudiante = (Estudiante) query.getSingleResult();
+            return estudiante;
+        } finally {
+            em.close();
+        }
+
+    }
 }

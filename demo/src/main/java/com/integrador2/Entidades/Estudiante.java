@@ -8,14 +8,14 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Estudiante {
-    
+    @Id
     private int dni;
     private String nombre;
     private String apellido;
     private int edad;
     private String genero;
     private String ciudad;
-    @Id
+    
     private int nroLibreta;
     @OneToMany(mappedBy = "estudiante")
     private List<EstudianteCarrera> carreras;

@@ -10,10 +10,11 @@ public interface EstudianteRepository {
     void agregarEstudiante(Estudiante estudiante);
     
     List<Estudiante> obtenerTodos();
-
+    
     Estudiante obtenerUnoPorLibreta(int nroLibreta);
 
     List<Estudiante> obtenerTodosPorGenero(String genero);
 
     void eliminarEstudiante(Estudiante estudiante);
+    Estudiante obtenerPorId(int id_estudiante);
 }
