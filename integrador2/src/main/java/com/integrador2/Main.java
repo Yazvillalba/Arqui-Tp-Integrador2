@@ -75,8 +75,11 @@ public class Main {
 
         // Estudiante est3 = eImpl.obtenerUnoPorLibreta(27500);
         // eImpl.eliminarEstudiante(est3);
-        System.out.println("Todas las carreras:");
         CarreraRepositoryImpl cImpl = new CarreraRepositoryImpl();
+        // Carrera c = new Carrera("TUIDA", 3);
+        // cImpl.agregarCarrera(c);
+        System.out.println("Todas las carreras:");
+        
         List<Carrera> carreras = cImpl.obtenerTodas();
         for (Carrera carrera : carreras) {
             System.out.println(carrera.getNombre() + " " + carrera.getId());
@@ -86,10 +89,12 @@ public class Main {
         Carrera carrera = cImpl.obtenerPorId(1);
         System.out.println(carrera.getNombre());
         System.out.println(" ");
-        EstudianteCarreraRepositoryImpl ecImpl = new EstudianteCarreraRepositoryImpl();
-        List<Estudiante> est= ecImpl.obtieneEstudiantesCarrera(carrera, "Tandil");
-        for (Estudiante estudiante : est) {
-            System.out.println(estudiante.getNombre() + " " + estudiante.getApellido() + " ");
-        }
+        // EstudianteCarreraRepositoryImpl ecImpl = new EstudianteCarreraRepositoryImpl();
+        // List<Estudiante> est= ecImpl.obtieneEstudiantesCarrera(carrera, "Tandil");
+        // for (Estudiante estudiante : est) {
+        //     System.out.println(estudiante.getNombre() + " " + estudiante.getApellido() + " ");
+        // }
+        // Carrera carrera2 = cImpl.obtenerPorId(17);
+        // cImpl.eliminarCarrera(carrera2);
     }
 }

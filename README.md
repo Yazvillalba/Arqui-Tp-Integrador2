@@ -4,6 +4,7 @@
  - Falta EstudianteCarreraImpl
  - Probar las consultas de los repositories 
  - Agregar factory
+ - Ver que agregar carreras permite agregar repetidas
 
 ## CONSIGNAS
 #### Inciso 2 
