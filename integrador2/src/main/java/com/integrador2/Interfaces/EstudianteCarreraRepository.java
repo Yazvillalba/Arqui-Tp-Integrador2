@@ -8,6 +8,6 @@ import com.integrador2.Entidades.Estudiante;
 public interface EstudianteCarreraRepository {
     
     void matricularEstudiante(Estudiante estudiante, Carrera carrera);
-    List<Estudiante> obtieneEstudiantesCarrera(Carrera carrera);
+    List<Estudiante> obtieneEstudiantesCarrera(Carrera carrera, String ciudad);
 
 }

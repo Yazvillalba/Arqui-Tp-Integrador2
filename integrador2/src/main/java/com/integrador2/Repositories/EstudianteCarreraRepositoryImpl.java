@@ -16,16 +16,19 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
 
     @Override
     //recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia
-    public List<Estudiante> obtieneEstudiantesCarrera(Carrera carrera) {
+    public List<Estudiante> obtieneEstudiantesCarrera(Carrera carrera, String ciudadResidencia) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String nombreCarrera = carrera.getNombre();
-            // String ciudadResidencia = --;
+            //String ciudadResidencia = --;
             String jpql = 
             "SELECT e FROM EstudianteCarrera ec JOIN Estudiante e JOIN Carrera c WHERE c.nombre = :nombreCarrera AND e.ciudad = :ciudadResidencia";
             Query query = em.createQuery(jpql, EstudianteCarrera.class);
-           
-            return null;
+            query.setParameter("nombreCarrera", nombreCarrera);
+            query.setParameter("ciudadResidencia", ciudadResidencia);
+            List<Estudiante> estudiantes = query.getResultList();
+            return estudiantes;
+        
         } finally {
             em.close();
         }

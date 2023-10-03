@@ -39,7 +39,7 @@ public class CSVLoader {
     }
 
     public void loadEstudiantes(String filePath) throws IOException {
-        CSVParser parser = this.getParser("demo\\src\\main\\java\\com\\integrador2\\Resources\\estudiantes.csv");
+        CSVParser parser = this.getParser("integrador2\\src\\main\\java\\com\\integrador2\\Resources\\estudiantes.csv");
         try {
             for (CSVRecord row : parser) {
                 Estudiante estudiante = new Estudiante(
@@ -57,7 +57,7 @@ public class CSVLoader {
     }
 
     public void loadCarrera(String filePath) throws IOException {
-        CSVParser parser = this.getParser("demo\\src\\main\\java\\com\\integrador2\\Resources\\carreras.csv");
+        CSVParser parser = this.getParser("integrador2\\src\\main\\java\\com\\integrador2\\Resources\\carreras.csv");
         try {
             for (CSVRecord row : parser) {
                 Carrera carrera = new Carrera(row.get("carrera"), Integer.parseInt(row.get("duracion")));
@@ -80,7 +80,7 @@ public class CSVLoader {
         }
     }
     public void loadEstudianteCarrera(String filePath) throws IOException {
-        CSVParser parser = this.getParser("demo\\src\\main\\java\\com\\integrador2\\Resources\\estudianteCarrera.csv");
+        CSVParser parser = this.getParser("integrador2\\src\\main\\java\\com\\integrador2\\Resources\\estudianteCarrera.csv");
         try {
             for (CSVRecord row : parser) {
                 int idEstudiante = Integer.parseInt(row.get("id_estudiante"));
