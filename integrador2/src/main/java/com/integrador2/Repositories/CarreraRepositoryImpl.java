@@ -30,8 +30,8 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     public List<Carrera> obtenerPorInscripto() {
          EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT c.nombre, COUNT(ec) AS cantidadInscritos FROM Carrera c JOIN c.EstudiantesCarrera ec GROUP BY c.nombre ORDER BY cantidadInscritos DESC";
-            Query query = em.createQuery(jpql, Carrera.class);
+            String jpql = "SELECT c.nombre, COUNT(c.id_carrera) AS cantidadInscriptos FROM Carrera c JOIN EstudianteCarrera ec GROUP BY c.nombre ORDER BY cantidadInscriptos DESC";
+            Query query = em.createQuery(jpql);
  
 
             List<Carrera> carreras = query.getResultList();

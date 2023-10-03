@@ -57,7 +57,6 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         } finally {
             em.close();
         }
-
     }
 
     @Override

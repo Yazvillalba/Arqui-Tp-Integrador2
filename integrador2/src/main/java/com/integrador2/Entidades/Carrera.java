@@ -58,6 +58,12 @@ public class Carrera {
 
     public void setEstudiantes(List<EstudianteCarrera> estudiantes) {
         this.estudiantes = estudiantes;
+    }
+    @Override
+    public String toString() {
+        return "Carrera [id_carrera=" + id_carrera + ", nombre=" + nombre + ", duracion=" + duracion + ", estudiantes="
+                + estudiantes + "]";
     } 
-    
+
+   
 }
