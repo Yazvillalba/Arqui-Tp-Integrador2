@@ -1,5 +1,6 @@
 ## CODIGO
  - Hacer dto para mostrar los datos
+ 
  - EN ELIMINAR ESTUDIANTE SE REPITE CODIGO DE ENTITY MANAGER ES VALIDOO? 
  - Falta EstudianteCarreraImpl
  - Probar las consultas de los repositories 
@@ -24,3 +25,6 @@
  - hacer los diagramas
    - Hacer dere
    - hacer diagrama de clases
+### DTO
+- En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
+- En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad
