@@ -48,7 +48,7 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
     public Estudiante obtenerUnoPorLibreta(int nroLibreta) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT e FROM Estudiante e WHERE e.nroLibreta =:nroLibreta";
+            String jpql = "SELECT e FROM Estudiante e WHERE e.nroLibreta = :nroLibreta";
             Query query = em.createQuery(jpql, Estudiante.class);
             query.setParameter("nroLibreta", nroLibreta);
 
@@ -64,7 +64,7 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
     public List<Estudiante> obtenerTodosPorGenero(String genero) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT e FROM Estudiante e WHERE e.genero =?1";
+            String jpql = "SELECT e FROM Estudiante e WHERE e.genero = ?1";
             Query query = em.createQuery(jpql, Estudiante.class);
             query.setParameter(1, genero);
 
@@ -107,7 +107,7 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
     public Estudiante obtenerPorId(int id_estudiante) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT e FROM Estudiante e WHERE e.dni =:id_estudiante";
+            String jpql = "SELECT e FROM Estudiante e WHERE e.dni = :id_estudiante";
             Query query = em.createQuery(jpql, Estudiante.class);
             query.setParameter("id_estudiante", id_estudiante);
 

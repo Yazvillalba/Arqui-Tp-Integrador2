@@ -13,11 +13,11 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            loader.loadEstudiantes("estudiante.csv");
-            loader.loadCarrera("carrera.csv");
+            // loader.loadEstudiantes("estudiante.csv");
+            // loader.loadCarrera("carrera.csv");
 
-            loader.insertarEstudiante();
-            loader.insertarCarrera();
+            // loader.insertarEstudiante();
+            // loader.insertarCarrera();
             // CarreraRepositoryImpl eImpl = new CarreraRepositoryImpl();
             // List<Carrera> carreras = eImpl.obtenerTodas();
             // for (Carrera carrera : carreras) {
