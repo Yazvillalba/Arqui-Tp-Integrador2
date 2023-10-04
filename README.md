@@ -3,7 +3,7 @@
  
  - EN ELIMINAR ESTUDIANTE SE REPITE CODIGO DE ENTITY MANAGER ES VALIDOO? 
  - Falta EstudianteCarreraImpl
- - Probar las consultas de los repositories 
+ - Probar las consultas de carrera y estudianteCarrera 
  - Agregar factory
  - Ver que agregar carreras permite agregar repetidas
 
@@ -25,6 +25,7 @@
  - hacer los diagramas
    - Hacer dere
    - hacer diagrama de clases
+   
 ### DTO
 - En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
 - En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad
