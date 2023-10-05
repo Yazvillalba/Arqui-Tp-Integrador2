@@ -78,10 +78,8 @@ public class CSVLoader {
                
                 Estudiante estudiante = estudianteRepository.obtenerPorId(idEstudiante);
                 Carrera carrera = carreraRepository.obtenerPorId(idCarrera);
-    
-                EstudianteCarrera estudianteCarrera = new EstudianteCarrera(estudiante, carrera, Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));
-     
-                estudianteCarreraRepository.agregarEstudianteCarrera(estudianteCarrera);
+                
+                estudianteCarreraRepository.matricularEstudiante(estudiante, carrera, Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));
             }
         } catch (Exception e) {
             e.printStackTrace();

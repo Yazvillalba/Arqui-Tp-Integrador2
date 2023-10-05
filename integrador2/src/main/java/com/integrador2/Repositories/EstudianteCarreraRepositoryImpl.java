@@ -35,16 +35,14 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
     }
 
     @Override
-    public void matricularEstudiante(Estudiante estudiante, Carrera carrera) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'matricularEstudiante'");
-    }
-
-    public void agregarEstudianteCarrera(EstudianteCarrera estudianteCarreras) {
+    public void matricularEstudiante(Estudiante estudiante, Carrera carrera, int anioInscripcion, int graduacion, int antiguedad) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
+        
+        EstudianteCarrera estudianteCarrera = new EstudianteCarrera(estudiante, carrera, anioInscripcion, graduacion, antiguedad);
+
         try {
             em.getTransaction().begin();
-            em.persist(estudianteCarreras);
+            em.persist(estudianteCarrera);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,5 +50,4 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
             em.close();
         }
     }
-
 }

@@ -9,7 +9,6 @@ import com.integrador2.Entidades.EstudianteCarrera;
 public interface EstudianteCarreraRepository {
    
 
-    void matricularEstudiante(Estudiante estudiante, Carrera carrera);
+    void matricularEstudiante(Estudiante estudiante, Carrera carrera, int anioInscripcion, int graduacion, int antiguedad);
     List<Estudiante> obtieneEstudiantesCarrera(Carrera carrera, String ciudad);
-    void agregarEstudianteCarrera(EstudianteCarrera EstudianteCarrera);
 }
