@@ -16,5 +16,8 @@ public interface EstudianteRepository {
     List<Estudiante> obtenerTodosPorGenero(String genero);
 
     void eliminarEstudiante(Estudiante estudiante);
+
     Estudiante obtenerPorId(int id_estudiante);
+
+    List<Estudiante> obtenerEstudiantePorCarreraYCiudad(Carrera carrera, String ciudad);
 }

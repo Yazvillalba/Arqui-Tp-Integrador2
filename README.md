@@ -24,7 +24,7 @@
 - [X] d) recuperar un estudiante, en base a su número de libreta universitaria.
 - [x] e) recuperar todos los estudiantes, en base a su género.
 - [x] f) recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
-- [ ] g) recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
+- [x] g) recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
 
 
 #### Inciso 3

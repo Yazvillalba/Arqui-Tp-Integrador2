@@ -15,19 +15,23 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            loader.loadEstudiantes("estudiantes.csv");
-            loader.loadCarrera("carreras.csv");
+            // loader.loadEstudiantes("estudiantes.csv");
+            // loader.loadCarrera("carreras.csv");
 
-            loader.loadEstudianteCarrera("estudianteCarrera.csv");
+            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             
+            EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
 
-            List<CarreraConInscriptos> carrerasPorInsc = carreraRepo.obtenerPorInscripto();
+            Carrera carreraX = carreraRepo.obtenerPorId(13);
+
+            List<Estudiante> estudiantes = estudianteRepo.obtenerEstudiantePorCarreraYCiudad(carreraX, "Lyamino");
             
-            for (CarreraConInscriptos carrera : carrerasPorInsc) {
-                System.out.println(carrera);
+            for (Estudiante estudiante : estudiantes) {
+                System.out.println(estudiante);
             }   
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error en main");

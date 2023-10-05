@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
+import com.integrador2.Entidades.EstudianteCarrera;
 import com.integrador2.Factory.EntityFactory;
 import com.integrador2.Interfaces.EstudianteRepository;
 
@@ -117,4 +118,27 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         }
 
     }
+
+        @Override
+    //recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia
+    public List<Estudiante> obtenerEstudiantePorCarreraYCiudad(Carrera carrera, String ciudad) {
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+        try {
+            String nombreCarrera = carrera.getNombre();
+            //String ciudad = --;
+            String jpql = 
+            "SELECT e FROM EstudianteCarrera ec JOIN ec.estudiante e JOIN ec.carrera c WHERE c.nombre = :nombreCarrera AND e.ciudad = :ciudad";
+            
+            Query query = em.createQuery(jpql, EstudianteCarrera.class);
+
+            query.setParameter("nombreCarrera", nombreCarrera);
+            query.setParameter("ciudad", ciudad);
+
+            List<Estudiante> estudiantes = query.getResultList();
+            return estudiantes;
+        } finally {
+            em.close();
+        }
+    }
+
 }

@@ -34,6 +34,13 @@ public class Estudiante {
     public Estudiante(){
         
     }
+    
+    @Override
+    public String toString() {
+        return "Estudiante [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad
+                + ", genero=" + genero + ", ciudad=" + ciudad + ", nroLibreta=" + nroLibreta ;
+    }
+
     public int getNroLibreta() {
         return nroLibreta;
     }
