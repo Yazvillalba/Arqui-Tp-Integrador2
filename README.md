@@ -6,6 +6,13 @@
  - Probar las consultas de carrera y estudianteCarrera 
  - Agregar factory
  - Ver que agregar carreras permite agregar repetidas
+ - Revisar los toString
+ - **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
+ - El codigo del ob
+### DTO
+- En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
+- En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad
+
 
 ## CONSIGNAS
 #### Inciso 2 
@@ -14,7 +21,7 @@
 - [X] c) recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple.
 - [X] d) recuperar un estudiante, en base a su número de libreta universitaria.
 - [x] e) recuperar todos los estudiantes, en base a su género.
-- [ ] f) recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
+- [x] f) recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
 - [ ] g) recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
 
 
@@ -26,6 +33,3 @@
    - Hacer dere
    - hacer diagrama de clases
    
-### DTO
-- En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
-- En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad

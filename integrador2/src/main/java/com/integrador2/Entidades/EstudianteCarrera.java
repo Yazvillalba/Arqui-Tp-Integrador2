@@ -28,6 +28,13 @@ public class EstudianteCarrera {
     private int antiguedad;
 
     
+    @Override
+    public String toString() {
+        return "EstudianteCarrera [id=" + id + ", estudiante=" + estudiante + ", carrera=" + carrera
+                + ", anioInscripcion=" + anioInscripcion + ", graduacion=" + graduacion + ", antiguedad=" + antiguedad
+                + "]";
+    }
+    
     public EstudianteCarrera( int anioInscripcion, int  graduacion, int antiguedad) {
         this.anioInscripcion = anioInscripcion;
         this.graduacion = graduacion;

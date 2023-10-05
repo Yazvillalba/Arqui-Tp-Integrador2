@@ -2,14 +2,17 @@ package com.integrador2.Repositories;
 
 import java.util.List;
 
+import com.integrador2.DTO.CarreraConInscriptos;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
+import com.integrador2.Entidades.EstudianteCarrera;
 import com.integrador2.Factory.EntityFactory;
 import com.integrador2.Interfaces.CarreraRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 public class CarreraRepositoryImpl implements CarreraRepository{
 
@@ -27,15 +30,16 @@ public class CarreraRepositoryImpl implements CarreraRepository{
         }
     }
 
+
     @Override
-    public List<Carrera> obtenerPorInscripto() {
+    public List<CarreraConInscriptos> obtenerPorInscripto() {
          EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT c.nombre, COUNT(c.id_carrera) AS cantidadInscriptos FROM Carrera c JOIN EstudianteCarrera ec GROUP BY c.nombre ORDER BY cantidadInscriptos DESC";
-            Query query = em.createQuery(jpql);
+            String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptos(c.id_carrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.id_carrera ORDER BY COUNT(*) DESC";
+            TypedQuery<CarreraConInscriptos> query = em.createQuery(jpql, CarreraConInscriptos.class);
  
 
-            List<Carrera> carreras = query.getResultList();
+            List<CarreraConInscriptos> carreras =  query.getResultList();
             return carreras;
         } finally {
             em.close();
@@ -99,4 +103,5 @@ public class CarreraRepositoryImpl implements CarreraRepository{
             em.close();
         }
     }
+
 }
