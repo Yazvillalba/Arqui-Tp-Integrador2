@@ -49,7 +49,8 @@ public class CSVLoader {
                         Integer.parseInt(row.get("edad")),
                         row.get("genero"),
                         row.get("ciudad"), Integer.parseInt(row.get("LU")));
-                estudiantes.add(estudiante);
+
+                estudianteRepository.agregarEstudiante(estudiante);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,24 +62,13 @@ public class CSVLoader {
         try {
             for (CSVRecord row : parser) {
                 Carrera carrera = new Carrera(row.get("carrera"), Integer.parseInt(row.get("duracion")));
-                carreras.add(carrera);
+                carreraRepository.agregarCarrera(carrera);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void insertarEstudiante() {
-        for (Estudiante estudiante : estudiantes) {
-            estudianteRepository.agregarEstudiante(estudiante);
-        }
-    }
-
-    public void insertarCarrera() {
-        for (Carrera carrera : carreras) {
-            carreraRepository.agregarCarrera(carrera);
-        }
-    }
     public void loadEstudianteCarrera(String filePath) throws IOException {
         CSVParser parser = this.getParser("integrador2\\src\\main\\java\\com\\integrador2\\Resources\\estudianteCarrera.csv");
         try {
@@ -88,25 +78,14 @@ public class CSVLoader {
                
                 Estudiante estudiante = estudianteRepository.obtenerPorId(idEstudiante);
                 Carrera carrera = carreraRepository.obtenerPorId(idCarrera);
-                
-
-                EstudianteCarrera estudianteCarrera = new EstudianteCarrera(Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));
-                estudianteCarrera.setEstudiante(estudiante);
-                estudianteCarrera.setCarrera(carrera);
-
-                estudianteCarreras.add(estudianteCarrera);
+    
+                EstudianteCarrera estudianteCarrera = new EstudianteCarrera(estudiante, carrera, Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));
+     
+                estudianteCarreraRepository.agregarEstudianteCarrera(estudianteCarrera);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
       
-    }
-     
-
-    public void insertarEstudianteCarrera() {
-        for (EstudianteCarrera estudianteCarrera : estudianteCarreras) {
-            estudianteCarreraRepository.agregarEstudianteCarrera(estudianteCarrera);
-        }
-    }
-    /* */
+    }     
 }

@@ -35,11 +35,14 @@ public class EstudianteCarrera {
                 + "]";
     }
     
-    public EstudianteCarrera( int anioInscripcion, int  graduacion, int antiguedad) {
+    public EstudianteCarrera(Estudiante estudiante, Carrera carrera, int anioInscripcion, int  graduacion, int antiguedad) {
+        this.carrera = carrera;
+        this.estudiante = estudiante;
         this.anioInscripcion = anioInscripcion;
         this.graduacion = graduacion;
         this.antiguedad = antiguedad;
     }
+
     public EstudianteCarrera(){
         
     }

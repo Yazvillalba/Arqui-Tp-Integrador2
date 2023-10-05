@@ -15,14 +15,10 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            // loader.loadEstudiantes("estudiantes.csv");
-            // loader.loadCarrera("carreras.csv");
+            loader.loadEstudiantes("estudiantes.csv");
+            loader.loadCarrera("carreras.csv");
 
-            // loader.insertarEstudiante();
-            // loader.insertarCarrera();
-            
-            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
-            // loader.insertarEstudianteCarrera();
+            loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
