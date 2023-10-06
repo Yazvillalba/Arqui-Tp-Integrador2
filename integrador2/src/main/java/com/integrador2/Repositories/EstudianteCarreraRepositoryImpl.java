@@ -1,6 +1,7 @@
 package com.integrador2.Repositories;
 
 
+import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Entidades.EstudianteCarrera;
@@ -12,7 +13,7 @@ import jakarta.persistence.EntityManager;
 public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraRepository{
     
     @Override
-    public void matricularEstudiante(Estudiante estudiante, Carrera carrera, int anioInscripcion, int graduacion, int antiguedad) {
+    public void matricularEstudiante(Estudiante estudiante, CarreraDTO carrera, int anioInscripcion, int graduacion, int antiguedad) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         
         EstudianteCarrera estudianteCarrera = new EstudianteCarrera(estudiante, carrera, anioInscripcion, graduacion, antiguedad);

@@ -3,11 +3,7 @@ package com.integrador2;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
-<<<<<<< HEAD
 import com.integrador2.DTO.CarreraDTO;
-=======
-import com.integrador2.DTO.EstudianteDTO;
->>>>>>> b83fac2cdf4cba2da57aa896a12bdd67d6a0e8e5
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -54,12 +50,12 @@ public class Main {
             // for (Carrera carrera : todas) {
             //     System.out.println(carrera.getNombre());
             // }
-            List<EstudianteDTO> estudiantes = estudianteRepo.obtenerTodos();
+            // List<EstudianteDTO> estudiantes = estudianteRepo.obtenerTodos();
             
-            System.out.println(estudiantes.get(0).getCabeceraTabla());
-            for (EstudianteDTO estudianteDTO : estudiantes) {
-                 System.out.println(estudianteDTO);
-            }
+            // System.out.println(estudiantes.get(0).getCabeceraTabla());
+            // for (EstudianteDTO estudianteDTO : estudiantes) {
+            //      System.out.println(estudianteDTO);
+            // }
 
         } catch (Exception e) {
             e.printStackTrace();
