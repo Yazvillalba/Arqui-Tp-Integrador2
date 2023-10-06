@@ -2,7 +2,7 @@ package com.integrador2.DTO;
 
 import java.io.Serializable;
 
-public class ReporteDTO implements Serializable{
+public class ReporteDTO extends DTO implements Serializable {
 
   private String nombreCarrera;
   private Long anio;
@@ -10,8 +10,7 @@ public class ReporteDTO implements Serializable{
   private Long graduados;
   
   
-  public ReporteDTO( String nombreCarrera, Long anio, Long inscriptos, Long graduados) {
-
+  public ReporteDTO(String nombreCarrera, Long anio, Long inscriptos, Long graduados) {
     this.nombreCarrera = nombreCarrera;
     this.anio = anio;
     this.inscriptos = inscriptos;
@@ -21,25 +20,19 @@ public class ReporteDTO implements Serializable{
   public ReporteDTO() {
   }
   
-  public String obtenerCabeceraTabla(){
-    return this.getFormattedName("Carrera", 40) + this.getFormattedName("Año", 20)
-        + this.getFormattedName("Inscriptos", 20) + this.getFormattedName("Graduados", 20) ;
+  @Override
+  public String getCabeceraTabla(){
+    return this.getNombreEspaciado("Carrera", 40) + this.getNombreEspaciado("Año", 20)
+        + this.getNombreEspaciado("Inscriptos", 20) + this.getNombreEspaciado("Graduados", 20) ;
   }
 
   @Override
   public String toString() {
-    return this.getFormattedName(nombreCarrera, 40) + this.getFormattedName(anio.toString(), 20)
-        + this.getFormattedName(inscriptos.toString(),20) + this.getFormattedName(graduados.toString(), 20) ;
+    return this.getNombreEspaciado(nombreCarrera, 40) + this.getNombreEspaciado(anio.toString(), 20)
+        + this.getNombreEspaciado(inscriptos.toString(),20) + this.getNombreEspaciado(graduados.toString(), 20) ;
   }
 
-  private String getFormattedName(String name, Integer size){
-    if(name.length() < size){
-      int missing = size - name.length();
-      name += " ".repeat(missing);
-    }
-    return name;
-  }
-
+ 
   public String getNombreCarrera() {
     return nombreCarrera;
   }

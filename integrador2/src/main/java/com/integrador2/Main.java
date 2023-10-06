@@ -2,7 +2,7 @@ package com.integrador2;
 
 import java.util.List;
 
-import com.integrador2.DTO.CarreraConInscriptos;
+import com.integrador2.DTO.CarreraConInscriptosDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -24,12 +24,20 @@ public class Main {
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
 
-            List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
+            // List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
             
-            System.out.println(reportes.get(0).obtenerCabeceraTabla());
-            for (ReporteDTO reporteDTO : reportes) {
+            // System.out.println(reportes.get(0).getCabeceraTabla());
+            // for (ReporteDTO reporteDTO : reportes) {
+            //     System.out.println(reporteDTO);
+            // }
+
+            List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorInscripto();
+            
+            System.out.println(inscriptos.get(0).getCabeceraTabla());
+            for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
                 System.out.println(reporteDTO);
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();

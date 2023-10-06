@@ -43,9 +43,8 @@ public class EstudianteCarrera {
         this.antiguedad = antiguedad;
     }
 
-    public EstudianteCarrera(){
-        
-    }
+    public EstudianteCarrera(){}
+
     public int getId() {
         return id;
     }

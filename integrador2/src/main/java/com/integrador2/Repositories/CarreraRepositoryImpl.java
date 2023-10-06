@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.integrador2.DTO.CarreraConInscriptos;
+import com.integrador2.DTO.CarreraConInscriptosDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Factory.EntityFactory;
@@ -33,14 +33,14 @@ public class CarreraRepositoryImpl implements CarreraRepository{
 
 
     @Override
-    public List<CarreraConInscriptos> obtenerPorInscripto() {
+    public List<CarreraConInscriptosDTO> obtenerPorInscripto() {
          EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptos(c.id_carrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.id_carrera ORDER BY COUNT(*) DESC";
-            TypedQuery<CarreraConInscriptos> query = em.createQuery(jpql, CarreraConInscriptos.class);
+            String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptosDTO(c.id_carrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.id_carrera ORDER BY COUNT(*) DESC";
+            TypedQuery<CarreraConInscriptosDTO> query = em.createQuery(jpql, CarreraConInscriptosDTO.class);
  
 
-            List<CarreraConInscriptos> carreras =  query.getResultList();
+            List<CarreraConInscriptosDTO> carreras =  query.getResultList();
             return carreras;
         } finally {
             em.close();
