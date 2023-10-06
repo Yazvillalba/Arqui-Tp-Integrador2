@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
+import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Factory.EntityFactory;
@@ -91,14 +92,15 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     }
 
     @Override
-    public Carrera obtenerPorId(int id_carrera){
-           EntityManager em = EntityFactory.getInstance().createEntityManager();
-        try {
-            String jpql = "SELECT c FROM Carrera c WHERE c.id = :id_carrera";
-            Query query = em.createQuery(jpql, Carrera.class);
-            query.setParameter("id_carrera", id_carrera);
+    public CarreraDTO obtenerPorId(int idCarrera){
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+        String jpql = "SELECT new com.integrador2.DTO.CarreraDTO(c.nombre, c.duracion) FROM Carrera c WHERE c.idCarrera=:idCarrera";
 
-            Carrera carrera =  (Carrera) query.getSingleResult();
+        try {
+            Query query = em.createQuery(jpql, CarreraDTO.class);
+            query.setParameter("idCarrera", idCarrera);
+
+            CarreraDTO carrera =  (CarreraDTO) query.getSingleResult();
             return carrera;
         } finally {
             em.close();

@@ -3,6 +3,7 @@ package com.integrador2;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
+import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -18,34 +19,18 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            loader.loadEstudiantes("estudiantes.csv");
-            loader.loadCarrera("carreras.csv");
+            // loader.loadEstudiantes("estudiantes.csv");
+            // loader.loadCarrera("carreras.csv");
 
-            loader.loadEstudianteCarrera("estudianteCarrera.csv");
+            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
 
-            // List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
-            
-            // System.out.println(reportes.get(0).getCabeceraTabla());
-            // for (ReporteDTO reporteDTO : reportes) {
-            //     System.out.println(reporteDTO);
-            // }
+            CarreraDTO carrera = carreraRepo.obtenerPorId(1);
+            System.out.println(carrera.getCabeceraTabla());
+            System.out.println(carrera);
 
-            List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorInscripto();
-            
-            System.out.println(inscriptos.get(0).getCabeceraTabla());
-            for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
-                System.out.println(reporteDTO);
-            }
-            FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
-            CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
-            List<Carrera> todas = carreraRepos.obtenerTodas();
-            for (Carrera carrera : todas) {
-                System.out.println(carrera.getNombre());
-            }
-            
 
         } catch (Exception e) {
             e.printStackTrace();

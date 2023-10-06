@@ -6,10 +6,14 @@ public class CarreraDTO extends DTO implements Serializable{
     private String nombre;
     private int duracion;
     
+    
     public CarreraDTO(String nombre, int duracion) {
         this.nombre = nombre;
         this.duracion = duracion;
     }
+
+    public CarreraDTO() {}
+
 
     public String getNombre() {
         return nombre;

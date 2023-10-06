@@ -1,6 +1,8 @@
 package com.integrador2.Entidades;
 
 import java.util.List;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,25 +13,25 @@ import jakarta.persistence.OneToMany;
 public class Carrera {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_carrera;
+    @Column(name = "id_carrera")
+    private int idCarrera;
     private String nombre;
     private int duracion;
     
     @OneToMany(mappedBy = "carrera")
     private List<EstudianteCarrera> estudiantes;
 
-    
-   
+  
 
     public Carrera(String nombre, int duracion) {
         this.nombre = nombre;
         this.duracion = duracion;
-
     }
+    
     public Carrera(){}
     
     public int getId() {
-        return id_carrera;
+        return idCarrera;
     }
 
     public String getNombre() {
@@ -45,7 +47,7 @@ public class Carrera {
     }
 
     public void setId(int id) {
-        this.id_carrera = id_carrera;
+        this.idCarrera = id;
     }
 
     public void setNombre(String nombre) {
@@ -61,7 +63,7 @@ public class Carrera {
     }
     @Override
     public String toString() {
-        return "Carrera [id_carrera=" + id_carrera + ", nombre=" + nombre + ", duracion=" + duracion + ", estudiantes="
+        return "Carrera [idCarrera=" + idCarrera + ", nombre=" + nombre + ", duracion=" + duracion + ", estudiantes="
                 + estudiantes + "]";
     } 
 
