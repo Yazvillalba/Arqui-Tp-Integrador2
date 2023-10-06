@@ -1,8 +1,11 @@
 package com.integrador2.Repositories;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptos;
+import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Entidades.EstudianteCarrera;
@@ -102,6 +105,63 @@ public class CarreraRepositoryImpl implements CarreraRepository{
         } finally {
             em.close();
         }
+    }
+
+        // QUERY QUE ANDA PERO NO DEVUELVE LOS NOMBRES DE LA CARRERA
+        // (SELECT * FROM Carrera c
+        // JOIN 
+        // (SELECT ec.id_carrera, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec 
+        // GROUP BY ec.id_carrera, ec.anioInscripcion) a
+        // ON a.id_carrera = c.id_carrera
+        // LEFT JOIN
+        // (SELECT  ec.id_carrera, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados FROM EstudianteCarrera ec 
+        // GROUP BY ec.id_carrera, ec.graduacion) g
+        // ON g.id_carrera = c.id_carrera AND g.anio = a.anio)
+        // UNION 
+        // (SELECT * FROM Carrera c
+        // JOIN 
+        // (SELECT ec.id_carrera, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec 
+        // GROUP BY ec.id_carrera, ec.anioInscripcion) a1
+        // ON a1.id_carrera = c.id_carrera
+        // RIGHT  JOIN
+        // (SELECT  ec.id_carrera, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados FROM EstudianteCarrera ec 
+        // GROUP BY ec.id_carrera, ec.graduacion) g
+        // ON g.id_carrera = c.id_carrera AND g.anio = a1.anio
+        // WHERE g.anio IS NOT NULL
+        // ORDER BY c.nombre, a1.anio)
+                
+
+    @Override
+    public List<ReporteDTO> generarReporteCarreras() {
+        String jpql = "SELECT c.id_carrera, c.nombre, a.anioInscripcion AS anio, a.inscriptos, g.graduados FROM Carrera c " +
+        "INNER JOIN " +
+            "(SELECT ec.id_carrera AS id_carrera, ec.anioInscripcion, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec " +
+        "GROUP BY ec.id_carrera, ec.anioInscripcion) a " +
+        "ON a.id_carrera = c.id_carrera " +
+        "INNER JOIN " +
+            "(SELECT ec.id_carrera AS id_carrera, ec.graduacion, COUNT(ec.graduacion) AS graduados FROM EstudianteCarrera ec " +
+        "GROUP BY ec.id_carrera, ec.graduacion) g " +
+        "ON g.id_carrera = c.id_carrera AND a.anioInscripcion = g.graduacion " +
+        "ORDER BY c.nombre, a.anioInscripcion ";
+
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+
+        try {
+            Query query = em.createNativeQuery(jpql);
+            
+            List<Object[]> results =  query.getResultList();
+            List<ReporteDTO> reporte = new ArrayList<>();
+
+            for (Object[] r : results){
+                reporte.add(new ReporteDTO((Integer)r[0],(String)r[1],(Integer)r[2],(Long)r[3], (Long)r[3]));
+            }
+                
+            return reporte;
+        }  finally {
+            em.close();
+        }
+
+
     }
 
 }

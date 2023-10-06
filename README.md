@@ -10,6 +10,8 @@
      - En caso de no usar los DTOS especificos hay que borrarlo 
  - [ ] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
  - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula
+ - [ ] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
+ 
  
  ### DTO
 - En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
