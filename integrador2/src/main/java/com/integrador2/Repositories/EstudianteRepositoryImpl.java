@@ -47,9 +47,9 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
     public Estudiante obtenerUnoPorLibreta(int nroLibreta) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT e FROM Estudiante e WHERE e.nroLibreta = :nroLibreta";
+            String jpql = "SELECT e FROM Estudiante e WHERE e.nro_libreta = :nroLibreta";
             Query query = em.createQuery(jpql, Estudiante.class);
-            query.setParameter("nroLibreta", nroLibreta);
+            query.setParameter("nro_libreta", nroLibreta);
 
             Estudiante estudiante = (Estudiante) query.getSingleResult();
             return estudiante;
@@ -81,9 +81,9 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         try {
 
             Integer nroLibreta = estudiante.getNroLibreta();
-            String jpql = "DELETE FROM Estudiante e WHERE e.nroLibreta = :nroLibreta";
+            String jpql = "DELETE FROM Estudiante e WHERE e.nro_libreta = :nroLibreta";
             Query query = em.createQuery(jpql);
-            query.setParameter("nroLibreta", nroLibreta);
+            query.setParameter("nro_libreta", nroLibreta);
             int rowsDeleted = query.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("Estudiante eliminado con éxito");

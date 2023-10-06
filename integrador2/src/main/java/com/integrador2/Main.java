@@ -3,7 +3,11 @@ package com.integrador2;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
+<<<<<<< HEAD
 import com.integrador2.DTO.CarreraDTO;
+=======
+import com.integrador2.DTO.EstudianteDTO;
+>>>>>>> b83fac2cdf4cba2da57aa896a12bdd67d6a0e8e5
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -31,6 +35,31 @@ public class Main {
             System.out.println(carrera.getCabeceraTabla());
             System.out.println(carrera);
 
+            // List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
+            
+            // System.out.println(reportes.get(0).getCabeceraTabla());
+            // for (ReporteDTO reporteDTO : reportes) {
+            //     System.out.println(reporteDTO);
+            // }
+
+            // List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorCantInscriptos();
+            
+            // System.out.println(inscriptos.get(0).getCabeceraTabla());
+            // for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
+            //     System.out.println(reporteDTO);
+            // }
+            // FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
+            // CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
+            // List<Carrera> todas = carreraRepos.obtenerTodas();
+            // for (Carrera carrera : todas) {
+            //     System.out.println(carrera.getNombre());
+            // }
+            List<EstudianteDTO> estudiantes = estudianteRepo.obtenerTodos();
+            
+            System.out.println(estudiantes.get(0).getCabeceraTabla());
+            for (EstudianteDTO estudianteDTO : estudiantes) {
+                 System.out.println(estudianteDTO);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
