@@ -3,6 +3,7 @@ package com.integrador2;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
+import com.integrador2.DTO.EstudianteDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -33,19 +34,24 @@ public class Main {
             //     System.out.println(reporteDTO);
             // }
 
-            List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorInscripto();
+            // List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorCantInscriptos();
             
-            System.out.println(inscriptos.get(0).getCabeceraTabla());
-            for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
-                System.out.println(reporteDTO);
-            }
-            FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
-            CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
-            List<Carrera> todas = carreraRepos.obtenerTodas();
-            for (Carrera carrera : todas) {
-                System.out.println(carrera.getNombre());
-            }
+            // System.out.println(inscriptos.get(0).getCabeceraTabla());
+            // for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
+            //     System.out.println(reporteDTO);
+            // }
+            // FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
+            // CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
+            // List<Carrera> todas = carreraRepos.obtenerTodas();
+            // for (Carrera carrera : todas) {
+            //     System.out.println(carrera.getNombre());
+            // }
+            List<EstudianteDTO> estudiantes = estudianteRepo.obtenerTodos();
             
+            System.out.println(estudiantes.get(0).getCabeceraTabla());
+            for (EstudianteDTO estudianteDTO : estudiantes) {
+                 System.out.println(estudianteDTO);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

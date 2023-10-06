@@ -2,7 +2,7 @@ package com.integrador2.DTO;
 
 import java.io.Serializable;
 
-public class EstudianteDTO implements Serializable{
+public class EstudianteDTO extends DTO implements Serializable{
     private int dni;
     private String nombre;
     private String apellido;
@@ -78,5 +78,15 @@ public class EstudianteDTO implements Serializable{
     public void setNroLibreta(int nroLibreta) {
         this.nroLibreta = nroLibreta;
     }
+
+    @Override
+    public String getCabeceraTabla() {
+        return this.getNombreEspaciado("dni", 15) +this.getNombreEspaciado("nombre", 20) +this.getNombreEspaciado("apellido", 20) +this.getNombreEspaciado("edad", 15)+this.getNombreEspaciado("genero", 20)+this.getNombreEspaciado("ciudad", 20) +this.getNombreEspaciado("nroLibreta", 10);
+    }
+    @Override
+    public String toString(){
+        return this.getNombreEspaciado(Integer.toString(dni), 15) + this.getNombreEspaciado(nombre, 20) + this.getNombreEspaciado(apellido, 20) + this.getNombreEspaciado(Integer.toString(edad), 15)+this.getNombreEspaciado(genero, 20) + this.getNombreEspaciado(ciudad, 20) + this.getNombreEspaciado(Integer.toString(nroLibreta), 15) ;
+    }
+
     
 }
