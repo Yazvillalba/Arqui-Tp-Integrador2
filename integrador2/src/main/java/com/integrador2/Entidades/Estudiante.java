@@ -2,6 +2,7 @@ package com.integrador2.Entidades;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -15,7 +16,8 @@ public class Estudiante {
     private int edad;
     private String genero;
     private String ciudad;
-    
+
+    @Column(name="nro_libreta")
     private int nroLibreta;
     @OneToMany(mappedBy = "estudiante")
     private List<EstudianteCarrera> carreras;

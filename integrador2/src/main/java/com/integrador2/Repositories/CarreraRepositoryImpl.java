@@ -33,7 +33,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
 
 
     @Override
-    public List<CarreraConInscriptosDTO> obtenerPorInscripto() {
+    public List<CarreraConInscriptosDTO> obtenerPorCantInscriptos() {
          EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptosDTO(c.id_carrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.id_carrera ORDER BY COUNT(*) DESC";

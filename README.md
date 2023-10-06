@@ -1,18 +1,21 @@
 ## CODIGO
  - [x] Hacer dto para mostrar los datos
  - [x] Falta EstudianteCarreraImpl
- - [ ] Probar las consultas de estudianteCarrera 
- - [ ] Agregar factory
- - [ ] Ver que agregar carreras permite agregar repetidas
+ - [x] Probar las consultas de estudianteCarrera 
+ - [x] Agregar factory
+      - Falta probar si funciona
+ - [x] Ver que agregar carreras permite agregar repetidas. Decidimos darlo como posible que se puedana agregar repetidas
  - [ ] Revisar los toString
  - [ ] **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
-     - En caso de no usar los DTOS especificos hay que borrarlo 
- - [ ] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
- - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula
- - [ ] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
- 
+     - Falta modificar en todos los Select de las Queries
+ - [x] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
+
+ - [x] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
+ - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula 
+ ### CONSULTA SERGIO 
  - tenemos un select que no devuelve entidad mapeada DEVUELVE ATRIBUTOS QUE NO ESTAN EN UNA ENTIDAD nro de inscriptos
  no esta en carrera. Se puede crear un dto aparte o se agregan esos datos a la entidad que mas cerca este
+ - Datos de los CSV estan mal
  ### DTO
 - En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
 - En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad
@@ -28,9 +31,6 @@
 - [x] f) recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
 - [x] g) recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
 
-
-#### Inciso 3
- FALTA HACER
 
 ## PROYECTO
  - hacer los diagramas

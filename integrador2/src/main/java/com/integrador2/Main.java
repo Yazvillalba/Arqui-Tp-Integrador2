@@ -7,6 +7,8 @@ import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Entidades.EstudianteCarrera;
+import com.integrador2.Factory.FactoryRepositoryImpl;
+import com.integrador2.Interfaces.CarreraRepository;
 import com.integrador2.Repositories.CarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteCarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteRepositoryImpl;
@@ -16,10 +18,10 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            // loader.loadEstudiantes("estudiantes.csv");
-            // loader.loadCarrera("carreras.csv");
+            loader.loadEstudiantes("estudiantes.csv");
+            loader.loadCarrera("carreras.csv");
 
-            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
+            loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
@@ -37,7 +39,13 @@ public class Main {
             for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
                 System.out.println(reporteDTO);
             }
-
+            FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
+            CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
+            List<Carrera> todas = carreraRepos.obtenerTodas();
+            for (Carrera carrera : todas) {
+                System.out.println(carrera.getNombre());
+            }
+            
 
         } catch (Exception e) {
             e.printStackTrace();
