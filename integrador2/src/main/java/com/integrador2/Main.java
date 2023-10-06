@@ -73,23 +73,23 @@ public class Main {
             // for (Estudiante estudiante : est) {
             //     System.out.println(estudiante.getNombre() + " " + estudiante.getApellido() + " ");
             // }
-            // Carrera car1 = new Carrera("MARI", 2);
+            // Carrera car1 = new Carrera("TUDAI", 2);
             // carreraRepo.agregarCarrera(car1);
-            System.out.println("Todas las carreras:");
-            List<Carrera> carreras = carreraRepo.obtenerTodas();
-            for (Carrera carrera : carreras) {
-                System.out.println(carrera.getNombre() + " " + carrera.getId());
-            }
-            System.out.println(" ");
-            System.out.println("Carrera por ID");
-            Carrera carrera = carreraRepo.obtenerPorId(1);
-            System.out.println(carrera.getNombre());
-            System.out.println(" ");
-            List<CarreraConInscriptos> carreraConInscriptos = carreraRepo.obtenerPorInscripto();
-            for (CarreraConInscriptos carrerass : carreraConInscriptos) {
-                System.out.println(carrerass);
-            }
-            // carreraRepo.eliminarCarrera(car1);
+            // System.out.println("Todas las carreras:");
+            // List<Carrera> carreras = carreraRepo.obtenerTodas();
+            //  for (Carrera carrera : carreras) {
+            //     System.out.println(carrera.getNombre() + " " + carrera.getId());
+            // }
+            // System.out.println(" ");
+            // System.out.println("Carrera por ID");
+            //Carrera carrera = carreraRepo.obtenerPorId(22);
+            // System.out.println(carrera.getNombre());
+            // System.out.println(" ");
+            // List<CarreraConInscriptos> carreraConInscriptos = carreraRepo.obtenerPorInscripto();
+            // for (CarreraConInscriptos carrerass : carreraConInscriptos) {
+            //     System.out.println(carrerass);
+            // }
+            //carreraRepo.eliminarCarrera(carrera);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error en main");

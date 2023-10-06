@@ -1,6 +1,6 @@
 ## CODIGO
  - [x] Hacer dto para mostrar los datos
- - [ ] Falta EstudianteCarreraImpl
+ - [x] Falta EstudianteCarreraImpl
  - [ ] Probar las consultas de estudianteCarrera 
  - [ ] Agregar factory
  - [ ] Ver que agregar carreras permite agregar repetidas
