@@ -105,42 +105,38 @@ public class CarreraRepositoryImpl implements CarreraRepository{
         }
     }
 
-        // QUERY QUE ANDA PERO NO DEVUELVE LOS NOMBRES DE LA CARRERA
-        // (SELECT * FROM Carrera c
-        // JOIN 
-        // (SELECT ec.id_carrera, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec 
-        // GROUP BY ec.id_carrera, ec.anioInscripcion) a
-        // ON a.id_carrera = c.id_carrera
-        // LEFT JOIN
-        // (SELECT  ec.id_carrera, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados FROM EstudianteCarrera ec 
-        // GROUP BY ec.id_carrera, ec.graduacion) g
-        // ON g.id_carrera = c.id_carrera AND g.anio = a.anio)
-        // UNION 
-        // (SELECT * FROM Carrera c
-        // JOIN 
-        // (SELECT ec.id_carrera, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec 
-        // GROUP BY ec.id_carrera, ec.anioInscripcion) a1
-        // ON a1.id_carrera = c.id_carrera
-        // RIGHT  JOIN
-        // (SELECT  ec.id_carrera, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados FROM EstudianteCarrera ec 
-        // GROUP BY ec.id_carrera, ec.graduacion) g
-        // ON g.id_carrera = c.id_carrera AND g.anio = a1.anio
-        // WHERE g.anio IS NOT NULL
-        // ORDER BY c.nombre, a1.anio)
-                
-
     @Override
     public List<ReporteDTO> generarReporteCarreras() {
-        String jpql = "SELECT c.id_carrera, c.nombre, a.anioInscripcion AS anio, a.inscriptos, g.graduados FROM Carrera c " +
-        "INNER JOIN " +
-            "(SELECT ec.id_carrera AS id_carrera, ec.anioInscripcion, COUNT(ec.anioInscripcion) AS inscriptos FROM EstudianteCarrera ec " +
-        "GROUP BY ec.id_carrera, ec.anioInscripcion) a " +
-        "ON a.id_carrera = c.id_carrera " +
-        "INNER JOIN " +
-            "(SELECT ec.id_carrera AS id_carrera, ec.graduacion, COUNT(ec.graduacion) AS graduados FROM EstudianteCarrera ec " +
-        "GROUP BY ec.id_carrera, ec.graduacion) g " +
-        "ON g.id_carrera = c.id_carrera AND a.anioInscripcion = g.graduacion " +
-        "ORDER BY c.nombre, a.anioInscripcion ";
+        String jpql = "WITH  "+
+        "Inscripciones AS ( "+
+            "SELECT  ec.id_carrera, c.nombre, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos  "+
+                "FROM EstudianteCarrera ec  "+
+                "JOIN Carrera c  "+
+                "ON c.id_carrera = ec.id_carrera "+
+            "GROUP BY ec.id_carrera, ec.anioInscripcion), "+
+         ""+
+        "Graduaciones AS (  "+
+            "SELECT  ec.id_carrera, c.nombre, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados  "+
+                "FROM EstudianteCarrera ec  "+
+                "JOIN Carrera c  "+
+                    "ON c.id_carrera = ec.id_carrera "+
+                "WHERE NULLIF(ec.graduacion,0) IS NOT NULL "+
+            "GROUP BY ec.id_carrera, ec.graduacion) "+
+             ""+
+            "SELECT IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, IF(i.nombre IS NOT NULL, i.anio, g.anio) AS anio, COALESCE(i.inscriptos, 0) AS inscriptos,  COALESCE(g.graduados, 0) AS graduados "+
+                "FROM Inscripciones i "+
+                    "LEFT JOIN  "+
+                "(SELECT * FROM Graduaciones) g "+
+                    "ON g.nombre = i.nombre AND g.anio = i.anio "+
+             ""+
+                "UNION  "+
+             ""+
+            "SELECT  IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, IF(i.nombre IS NOT NULL, i.anio, g.anio) AS anio, COALESCE(i.inscriptos, 0) AS inscriptos,  COALESCE(g.graduados, 0) AS graduados "+
+                "FROM Inscripciones i "+
+                    "RIGHT JOIN  "+
+                "(SELECT * FROM Graduaciones) g "+
+                    "ON g.nombre = i.nombre AND g.anio = i.anio "+
+            "ORDER BY carrera,  anio ASC ";
 
         EntityManager em = EntityFactory.getInstance().createEntityManager();
 
@@ -151,7 +147,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
             List<ReporteDTO> reporte = new ArrayList<>();
 
             for (Object[] r : results){
-                reporte.add(new ReporteDTO((Integer)r[0],(String)r[1],(Integer)r[2],(Long)r[3], (Long)r[3]));
+                reporte.add(new ReporteDTO((String)r[0],(Long)r[1],(Long)r[2], (Long)r[3]));
             }
                 
             return reporte;

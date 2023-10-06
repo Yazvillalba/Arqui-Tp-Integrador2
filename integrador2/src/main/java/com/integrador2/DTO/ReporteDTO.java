@@ -3,15 +3,15 @@ package com.integrador2.DTO;
 import java.io.Serializable;
 
 public class ReporteDTO implements Serializable{
-  private int id_carrera;
+
   private String nombreCarrera;
-  private int anio;
+  private Long anio;
   private Long inscriptos;
   private Long graduados;
   
   
-  public ReporteDTO(int id_carrera, String nombreCarrera, Integer anio, Long inscriptos, Long graduados) {
-    this.id_carrera = id_carrera;
+  public ReporteDTO( String nombreCarrera, Long anio, Long inscriptos, Long graduados) {
+
     this.nombreCarrera = nombreCarrera;
     this.anio = anio;
     this.inscriptos = inscriptos;
@@ -21,10 +21,23 @@ public class ReporteDTO implements Serializable{
   public ReporteDTO() {
   }
   
+  public String obtenerCabeceraTabla(){
+    return this.getFormattedName("Carrera", 40) + this.getFormattedName("Año", 20)
+        + this.getFormattedName("Inscriptos", 20) + this.getFormattedName("Graduados", 20) ;
+  }
+
   @Override
   public String toString() {
-    return "ReporteDTO [id_carrera=" + id_carrera + ", nombreCarrera=" + nombreCarrera + ", anio=" + anio
-        + ", inscriptos=" + inscriptos + ", graduados=" + graduados + "]";
+    return this.getFormattedName(nombreCarrera, 40) + this.getFormattedName(anio.toString(), 20)
+        + this.getFormattedName(inscriptos.toString(),20) + this.getFormattedName(graduados.toString(), 20) ;
+  }
+
+  private String getFormattedName(String name, Integer size){
+    if(name.length() < size){
+      int missing = size - name.length();
+      name += " ".repeat(missing);
+    }
+    return name;
   }
 
   public String getNombreCarrera() {
@@ -35,11 +48,11 @@ public class ReporteDTO implements Serializable{
     this.nombreCarrera = nombreCarrera;
   }
 
-  public int getAnio() {
+  public Long getAnio() {
     return anio;
   }
 
-  public void setAnio(int anio) {
+  public void setAnio(Long anio) {
     this.anio = anio;
   }
 
