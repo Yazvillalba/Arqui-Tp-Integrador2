@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptos;
 import com.integrador2.Entidades.Carrera;
-import com.integrador2.Entidades.Estudiante;
-import com.integrador2.Entidades.EstudianteCarrera;
 import com.integrador2.Factory.EntityFactory;
 import com.integrador2.Interfaces.CarreraRepository;
 

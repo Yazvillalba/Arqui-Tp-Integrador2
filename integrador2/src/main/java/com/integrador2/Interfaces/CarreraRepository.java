@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptos;
 import com.integrador2.Entidades.Carrera;
-import com.integrador2.Entidades.Estudiante;
 
 public interface CarreraRepository {
     

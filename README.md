@@ -1,8 +1,7 @@
 ## CODIGO
- - [ ] Hacer dto para mostrar los datos
- - [ ] EN ELIMINAR ESTUDIANTE SE REPITE CODIGO DE ENTITY MANAGER ES VALIDOO? 
+ - [x] Hacer dto para mostrar los datos
  - [ ] Falta EstudianteCarreraImpl
- - [ ] Probar las consultas de carrera y estudianteCarrera 
+ - [ ] Probar las consultas de estudianteCarrera 
  - [ ] Agregar factory
  - [ ] Ver que agregar carreras permite agregar repetidas
  - [ ] Revisar los toString
@@ -10,7 +9,8 @@
      - En caso de no usar los DTOS especificos hay que borrarlo 
  - [ ] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
  - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula
- 
+ - tenemos un select que no devuelve entidad mapeada DEVUELVE ATRIBUTOS QUE NO ESTAN EN UNA ENTIDAD nro de inscriptos
+ no esta en carrera. Se puede crear un dto aparte o se agregan esos datos a la entidad que mas cerca este
  ### DTO
 - En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
 - En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad

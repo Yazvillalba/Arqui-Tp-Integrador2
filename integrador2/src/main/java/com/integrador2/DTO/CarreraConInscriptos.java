@@ -15,7 +15,7 @@ public class CarreraConInscriptos implements Serializable{
 
     @Override
     public String toString() {
-      return "CarreraConInscripto [nombre=" + nombre + ", nroInscriptos=" + nroInscriptos + "]";
+      return "Carrera: " + nombre + ", Inscriptos: " + nroInscriptos;
     }
 
     public String getNombre() {

@@ -1,6 +1,5 @@
 package com.integrador2.Repositories;
 
-import java.util.List;
 
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
@@ -9,7 +8,6 @@ import com.integrador2.Factory.EntityFactory;
 import com.integrador2.Interfaces.EstudianteCarreraRepository;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
 
 public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraRepository{
     
