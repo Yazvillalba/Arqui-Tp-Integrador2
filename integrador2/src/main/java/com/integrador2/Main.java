@@ -16,10 +16,10 @@ public class Main {
         CSVLoader loader = new CSVLoader();
 
         try {
-            // loader.loadEstudiantes("estudiantes.csv");
-            // loader.loadCarrera("carreras.csv");
+            loader.loadEstudiantes("estudiantes.csv");
+            loader.loadCarrera("carreras.csv");
 
-            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
+            loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
