@@ -1,6 +1,7 @@
 package com.integrador2.Entidades;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class EstudianteCarrera {
     @JoinColumn(name = "id_carrera")
     private Carrera carrera;
 
+    @Column(name="anio_inscripcion")
     private int anioInscripcion;
     private int graduacion;
     private int antiguedad;

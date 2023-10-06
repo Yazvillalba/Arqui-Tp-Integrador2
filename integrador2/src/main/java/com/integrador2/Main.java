@@ -7,6 +7,8 @@ import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Entidades.EstudianteCarrera;
+import com.integrador2.Factory.FactoryRepositoryImpl;
+import com.integrador2.Interfaces.CarreraRepository;
 import com.integrador2.Repositories.CarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteCarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteRepositoryImpl;
@@ -30,7 +32,13 @@ public class Main {
             for (ReporteDTO reporteDTO : reportes) {
                 System.out.println(reporteDTO);
             }
-
+            FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
+            CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
+            List<Carrera> todas = carreraRepos.obtenerTodas();
+            for (Carrera carrera : todas) {
+                System.out.println(carrera.getNombre());
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error en main");

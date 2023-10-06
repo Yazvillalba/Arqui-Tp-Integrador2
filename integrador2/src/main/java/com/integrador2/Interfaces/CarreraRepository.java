@@ -10,7 +10,7 @@ public interface CarreraRepository {
     
     void agregarCarrera(Carrera carrera);
 
-    List<CarreraConInscriptos> obtenerPorInscripto(); //ordena por cantidad de inscriptos
+    List<CarreraConInscriptos> obtenerPorCantInscriptos(); //ordena por cantidad de inscriptos
 
     List<Carrera> obtenerTodas();
     

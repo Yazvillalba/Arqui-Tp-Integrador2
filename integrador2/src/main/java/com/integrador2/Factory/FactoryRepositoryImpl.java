@@ -32,7 +32,7 @@ public class FactoryRepositoryImpl implements FactoryRepository{
     }
 
     @Override
-    public CarreraRepository obtenerCarreraRepositorY() {
+    public CarreraRepository obtenerCarreraRepository() {
         return carreraRepository;
     }
 

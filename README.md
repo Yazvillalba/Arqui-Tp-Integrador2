@@ -2,15 +2,15 @@
  - [x] Hacer dto para mostrar los datos
  - [x] Falta EstudianteCarreraImpl
  - [x] Probar las consultas de estudianteCarrera 
- - [ ] Agregar factory
+ - [x] Agregar factory
       - Falta probar si funciona
  - [x] Ver que agregar carreras permite agregar repetidas. Decidimos darlo como posible que se puedana agregar repetidas
  - [ ] Revisar los toString
  - [ ] **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
      - Falta modificar en todos los Select de las Queries
- - [ ] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
+ - [x] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
 
- - [ ] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
+ - [x] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
  - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula 
  ### CONSULTA SERGIO 
  - tenemos un select que no devuelve entidad mapeada DEVUELVE ATRIBUTOS QUE NO ESTAN EN UNA ENTIDAD nro de inscriptos

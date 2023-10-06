@@ -6,7 +6,7 @@ import com.integrador2.Interfaces.EstudianteRepository;
 
 public interface FactoryRepository {
     EstudianteRepository obtenerEstudianteRepository();
-    CarreraRepository obtenerCarreraRepositorY();
+    CarreraRepository obtenerCarreraRepository();
     EstudianteCarreraRepository obtenerEstudianteCarreraRepository();
 
 }
