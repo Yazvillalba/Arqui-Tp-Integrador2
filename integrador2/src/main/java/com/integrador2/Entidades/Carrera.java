@@ -2,6 +2,8 @@ package com.integrador2.Entidades;
 
 import java.util.List;
 
+import com.integrador2.DTO.DTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Carrera {
+public class Carrera extends DTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carrera")
@@ -62,10 +64,13 @@ public class Carrera {
         this.estudiantes = estudiantes;
     }
     @Override
-    public String toString() {
-        return "Carrera [idCarrera=" + idCarrera + ", nombre=" + nombre + ", duracion=" + duracion + ", estudiantes="
-                + estudiantes + "]";
-    } 
-
+    public String getCabeceraTabla() {
+        return this.getNombreEspaciado("idCarrera", 15) + this.getNombreEspaciado("nombre", 30)+ this.getNombreEspaciado("duracion", 15);
+    }
+    
+    @Override
+    public String toString(){
+        return this.getNombreEspaciado(Integer.toString(idCarrera), 15) + this.getNombreEspaciado(nombre, 30)+ this.getNombreEspaciado(Integer.toString(idCarrera), 15);
+    }
    
 }

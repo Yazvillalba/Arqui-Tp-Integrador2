@@ -2,13 +2,15 @@ package com.integrador2.Entidades;
 
 import java.util.List;
 
+import com.integrador2.DTO.DTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Estudiante {
+public class Estudiante extends DTO {
     @Id
     private int dni;
     private String nombre;
@@ -105,6 +107,11 @@ public class Estudiante {
 
     public void setCarreras(List<EstudianteCarrera> carreras) {
         this.carreras = carreras;
+    }
+    @Override
+    public String getCabeceraTabla() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCabeceraTabla'");
     }
 
     
