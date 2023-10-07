@@ -125,7 +125,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
                 "WHERE NULLIF(ec.graduacion,0) IS NOT NULL "+
             "GROUP BY ec.id_carrera, ec.graduacion) "+
              ""+
-            "SELECT IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, IF(i.nombre IS NOT NULL, i.anio, g.anio) AS anio, COALESCE(i.inscriptos, 0) AS inscriptos,  COALESCE(g.graduados, 0) AS graduados "+
+            "SELECT IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, CAST(IF(i.nombre IS NOT NULL, i.anio, g.anio) as UNSIGNED) AS anio, CAST(COALESCE(i.inscriptos, 0) as UNSIGNED) AS inscriptos,  CAST(COALESCE(g.graduados, 0) as UNSIGNED) AS graduados "+
                 "FROM Inscripciones i "+
                     "LEFT JOIN  "+
                 "(SELECT * FROM Graduaciones) g "+
@@ -133,7 +133,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
              ""+
                 "UNION  "+
              ""+
-            "SELECT  IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, IF(i.nombre IS NOT NULL, i.anio, g.anio) AS anio, COALESCE(i.inscriptos, 0) AS inscriptos,  COALESCE(g.graduados, 0) AS graduados "+
+            "SELECT  IF(i.nombre IS NOT NULL, i.nombre, g.nombre) AS carrera, CAST(IF(i.nombre IS NOT NULL, i.anio, g.anio) as UNSIGNED) AS anio, CAST(COALESCE(i.inscriptos, 0) as UNSIGNED) AS inscriptos,  CAST(COALESCE(g.graduados, 0) as UNSIGNED) AS graduados "+
                 "FROM Inscripciones i "+
                     "RIGHT JOIN  "+
                 "(SELECT * FROM Graduaciones) g "+
@@ -148,16 +148,10 @@ public class CarreraRepositoryImpl implements CarreraRepository{
             List<Object[]> results =  query.getResultList();
             List<ReporteDTO> reporte = new ArrayList<>();
 
-            // for (Object[] r : results){
-            //     reporte.add(new ReporteDTO((String)r[0],(Long)r[1],(Long)r[2], (Long)r[3]));
-            // }
-            for (Object[] r : results) {
-                //Long anio = (r[1] instanceof Long) ? (Long) r[1] : ((Integer) r[1]).longValue();
-                Long inscriptos = (r[2] instanceof Long) ? (Long) r[2] : ((Integer) r[2]).longValue();
-                Long graduados = (r[3] instanceof Long) ? (Long) r[3] : ((Integer) r[3]).longValue();
-                reporte.add(new ReporteDTO((String) r[0], ((Integer) r[1]).longValue(),inscriptos, graduados));
+            for (Object[] r : results){
+                reporte.add(new ReporteDTO((String)r[0],(Long)r[1],(Long)r[2], (Long)r[3]));
             }
-            
+                     
             return reporte;
         }  finally {
             em.close();

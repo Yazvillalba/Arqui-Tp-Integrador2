@@ -6,7 +6,8 @@
       - Falta probar si funciona
  - [x] Ver que agregar carreras permite agregar repetidas. Decidimos darlo como posible que se puedana agregar repetidas
  - [ ] Revisar los toString
- - [ ] **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
+    - dejar mas lindos bnjitos preociosos los toString de las entidades
+ - [x] **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
      - Falta modificar en todos los Select de las Queries
  - [x] Revisar que los nombres sean descriptivos y que usen plural o singular segun corresponda
 

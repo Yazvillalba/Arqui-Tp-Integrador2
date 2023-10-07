@@ -34,6 +34,7 @@ public class Main {
             List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
 
             System.out.println(reportes.get(0).getCabeceraTabla());
+           
             for (ReporteDTO reporteDTO : reportes) {
                 System.out.println(reporteDTO);
             }
