@@ -17,7 +17,7 @@ public interface EstudianteRepository {
 
     void eliminarEstudiante(Estudiante estudiante);
 
-    Estudiante obtenerPorId(int id_estudiante);
+    Estudiante obtenerPorDni(int dni);
 
     List<Estudiante> obtenerEstudiantePorCarreraYCiudad(Carrera carrera, String ciudad);
 }
