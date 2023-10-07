@@ -65,12 +65,12 @@ public class Carrera extends DTO {
     }
     @Override
     public String getCabeceraTabla() {
-        return this.getNombreEspaciado("idCarrera", 15) + this.getNombreEspaciado("nombre", 30)+ this.getNombreEspaciado("duracion", 15);
+        return this.getNombreEspaciado("ID", 10) + this.getNombreEspaciado("Nombre", 30)+ this.getNombreEspaciado("Duración", 15);
     }
     
     @Override
     public String toString(){
-        return this.getNombreEspaciado(Integer.toString(idCarrera), 15) + this.getNombreEspaciado(nombre, 30)+ this.getNombreEspaciado(Integer.toString(idCarrera), 15);
+        return this.getNombreEspaciado(Integer.toString(idCarrera), 10) + this.getNombreEspaciado(nombre, 30)+ this.getNombreEspaciado(Integer.toString(duracion), 15);
     }
    
 }

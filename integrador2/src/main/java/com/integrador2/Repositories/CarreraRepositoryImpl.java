@@ -35,7 +35,7 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     public List<CarreraConInscriptosDTO> obtenerPorCantInscriptos() {
          EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
-            String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptosDTO(c.id_carrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.id_carrera ORDER BY COUNT(*) DESC";
+            String jpql = "SELECT new com.integrador2.DTO.CarreraConInscriptosDTO(c.idCarrera, c.nombre, COUNT(*)) FROM Carrera c JOIN c.estudiantes e GROUP BY c.nombre, c.idCarrera ORDER BY COUNT(*) DESC";
             TypedQuery<CarreraConInscriptosDTO> query = em.createQuery(jpql, CarreraConInscriptosDTO.class);
  
 
@@ -54,10 +54,10 @@ public class CarreraRepositoryImpl implements CarreraRepository{
         transaction.begin();
         try {
 
-            Integer id_carrera = carrera.getId();
-            String jpql = "DELETE FROM Carrera c WHERE c.id_carrera = :id_carrera";
+            Integer idCarrera = carrera.getId();
+            String jpql = "DELETE FROM Carrera c WHERE c.idCarrera = :idCarrera";
             Query query = em.createQuery(jpql);
-            query.setParameter("id_carrera", id_carrera);
+            query.setParameter("idCarrera", idCarrera);
             int rowsDeleted = query.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("Carrera eliminada con éxito");

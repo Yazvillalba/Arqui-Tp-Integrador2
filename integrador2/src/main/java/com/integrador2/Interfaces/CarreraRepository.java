@@ -10,11 +10,11 @@ public interface CarreraRepository {
     
     void agregarCarrera(Carrera carrera);
 
-    List<CarreraConInscriptosDTO> obtenerPorCantInscriptos(); //ordena por cantidad de inscriptos
+    Carrera obtenerPorId(int idCarrera);
 
     List<Carrera> obtenerTodas();
     
-    Carrera obtenerPorId(int idCarrera);
+    List<CarreraConInscriptosDTO> obtenerPorCantInscriptos(); //ordena por cantidad de inscriptos
 
     void eliminarCarrera(Carrera carrera);
 
