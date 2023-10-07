@@ -102,12 +102,12 @@ public class EstudianteRepositoryImpl implements EstudianteRepository {
         }
     }
     @Override
-    public Estudiante obtenerPorId(int id_estudiante) {
+    public Estudiante obtenerPorDni(int dni) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         try {
             String jpql = "SELECT e FROM Estudiante e WHERE e.dni = :id_estudiante";
             Query query = em.createQuery(jpql, Estudiante.class);
-            query.setParameter("id_estudiante", id_estudiante);
+            query.setParameter("id_estudiante", dni);
 
             Estudiante estudiante = (Estudiante) query.getSingleResult();
             return estudiante;

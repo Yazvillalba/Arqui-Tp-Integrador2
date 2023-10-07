@@ -68,7 +68,7 @@ public class CSVLoader {
                 int idEstudiante = Integer.parseInt(row.get("id_estudiante"));
                 int idCarrera = Integer.parseInt(row.get("id_carrera"));
                
-                Estudiante estudiante = estudianteRepository.obtenerPorId(idEstudiante);
+                Estudiante estudiante = estudianteRepository.obtenerPorDni(idEstudiante);
                 Carrera carrera = carreraRepository.obtenerPorId2(idCarrera);
                 
                 estudianteCarreraRepository.matricularEstudiante(estudiante, carrera, Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));

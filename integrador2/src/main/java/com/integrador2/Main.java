@@ -26,18 +26,21 @@ public class Main {
 
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
+            Estudiante estudiante  = estudianteRepo.obtenerPorDni(10719241);
+            System.out.println(estudiante.getCabeceraTabla());
+            System.out.println(estudiante);
 
             // CarreraDTO carrera = carreraRepo.obtenerPorId(1);
             // System.out.println(carrera.getCabeceraTabla());
             // System.out.println(carrera);
 
-            List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
+            // List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
 
-            System.out.println(reportes.get(0).getCabeceraTabla());
+            // System.out.println(reportes.get(0).getCabeceraTabla());
            
-            for (ReporteDTO reporteDTO : reportes) {
-                System.out.println(reporteDTO);
-            }
+            // for (ReporteDTO reporteDTO : reportes) {
+            //     System.out.println(reporteDTO);
+            // }
 
             // List<CarreraConInscriptosDTO> inscriptos =
             // carreraRepo.obtenerPorCantInscriptos();

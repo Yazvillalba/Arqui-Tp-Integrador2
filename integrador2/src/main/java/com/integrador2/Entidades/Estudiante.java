@@ -41,8 +41,12 @@ public class Estudiante extends DTO {
     
     @Override
     public String toString() {
-        return "Estudiante [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad
-                + ", genero=" + genero + ", ciudad=" + ciudad + ", nroLibreta=" + nroLibreta ;
+
+        return this.getNombreEspaciado(Integer.toString(dni), 15) + this.getNombreEspaciado(nombre, 15)
+                + this.getNombreEspaciado(apellido, 15) + getNombreEspaciado(Integer.toString(edad), 10)
+                + getNombreEspaciado(genero, 10) + getNombreEspaciado(ciudad, 10)
+                + getNombreEspaciado(Integer.toString(nroLibreta), 5);
+
     }
 
     public int getNroLibreta() {
@@ -110,8 +114,10 @@ public class Estudiante extends DTO {
     }
     @Override
     public String getCabeceraTabla() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCabeceraTabla'");
+       return this.getNombreEspaciado("DNI", 15) + this.getNombreEspaciado("Nombre", 15)
+                + this.getNombreEspaciado("Apellido", 15) + getNombreEspaciado("Edad", 10)
+                + getNombreEspaciado("Genero", 10) + getNombreEspaciado("Ciudad", 10)
+                + getNombreEspaciado("NroLibreta", 5);
     }
 
     
