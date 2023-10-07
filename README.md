@@ -5,7 +5,7 @@
  - [x] Agregar factory
       - Falta probar si funciona
  - [x] Ver que agregar carreras permite agregar repetidas. Decidimos darlo como posible que se puedana agregar repetidas
- - [ ] Revisar los toString
+ - [x] Revisar los toString
     - dejar mas lindos bnjitos preociosos los toString de las entidades
  - [x] **Pensar si usamos un DTO para SELECTS Customs o usamos la data sin castear**
      - Falta modificar en todos los Select de las Queries
