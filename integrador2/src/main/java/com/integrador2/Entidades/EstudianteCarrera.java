@@ -1,6 +1,7 @@
 package com.integrador2.Entidades;
 
 import com.integrador2.DTO.CarreraDTO;
+import com.integrador2.DTO.DTO;
 import com.integrador2.Repositories.CarreraRepositoryImpl;
 
 import jakarta.persistence.CascadeType;
@@ -13,7 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class EstudianteCarrera {
+public class EstudianteCarrera extends DTO{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -35,10 +36,9 @@ public class EstudianteCarrera {
     
     @Override
     public String toString() {
-        return "EstudianteCarrera [id=" + id + ", estudiante=" + estudiante + ", carrera=" + carrera
-                + ", anioInscripcion=" + anioInscripcion + ", graduacion=" + graduacion + ", antiguedad=" + antiguedad
-                + "]";
-    }
+        return getNombreEspaciado(Integer.toString(id), 5) + getNombreEspaciado(estudiante.getNombre() + " " + estudiante.getApellido(), 30) + getNombreEspaciado(carrera.getNombre(), 40)
+                + getNombreEspaciado(Integer.toString(anioInscripcion), 10) + getNombreEspaciado(Integer.toString(graduacion), 10) + getNombreEspaciado(Integer.toString(antiguedad), 10);
+        }
     
     public EstudianteCarrera(Estudiante estudiante, Carrera carrera, int anioInscripcion, int  graduacion, int antiguedad) {
         this.carrera = carrera;
@@ -86,6 +86,12 @@ public class EstudianteCarrera {
     }
     public void setGraduacion(int graduacion) {
         this.graduacion = graduacion;
+    }
+
+    @Override
+    public String getCabeceraTabla() {
+         return getNombreEspaciado("ID", 5) + getNombreEspaciado("Estudiante", 30) + getNombreEspaciado("Carrera", 40)
+                + getNombreEspaciado("Año inscripción", 10) + getNombreEspaciado("Graduación", 10) + getNombreEspaciado("Antiguedad", 10);
     }
 
 }
