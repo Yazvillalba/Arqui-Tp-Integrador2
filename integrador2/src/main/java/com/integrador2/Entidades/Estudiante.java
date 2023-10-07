@@ -39,16 +39,6 @@ public class Estudiante extends DTO {
         
     }
     
-    @Override
-    public String toString() {
-
-        return this.getNombreEspaciado(Integer.toString(dni), 15) + this.getNombreEspaciado(nombre, 15)
-                + this.getNombreEspaciado(apellido, 15) + getNombreEspaciado(Integer.toString(edad), 10)
-                + getNombreEspaciado(genero, 10) + getNombreEspaciado(ciudad, 10)
-                + getNombreEspaciado(Integer.toString(nroLibreta), 5);
-
-    }
-
     public int getNroLibreta() {
         return nroLibreta;
     }
@@ -112,13 +102,23 @@ public class Estudiante extends DTO {
     public void setCarreras(List<EstudianteCarrera> carreras) {
         this.carreras = carreras;
     }
+
     @Override
     public String getCabeceraTabla() {
-       return this.getNombreEspaciado("DNI", 15) + this.getNombreEspaciado("Nombre", 15)
-                + this.getNombreEspaciado("Apellido", 15) + getNombreEspaciado("Edad", 10)
-                + getNombreEspaciado("Genero", 10) + getNombreEspaciado("Ciudad", 10)
-                + getNombreEspaciado("NroLibreta", 5);
+       return this.getNombreEspaciado("DNI", 15) + this.getNombreEspaciado("Nombre", 20)
+                + this.getNombreEspaciado("Apellido", 20) + getNombreEspaciado("Edad", 10)
+                + getNombreEspaciado("Genero", 20) + getNombreEspaciado("Ciudad", 20)
+                + getNombreEspaciado("NroLibreta", 8);
     }
 
+    @Override
+    public String toString() {
+
+        return getNombreEspaciado(Integer.toString(dni), 15) + getNombreEspaciado(nombre, 20)
+                + getNombreEspaciado(apellido, 20) + getNombreEspaciado(Integer.toString(edad), 10)
+                + getNombreEspaciado(genero, 20) + getNombreEspaciado(ciudad, 20)
+                + getNombreEspaciado(Integer.toString(nroLibreta), 8);
+
+    }
     
 }
