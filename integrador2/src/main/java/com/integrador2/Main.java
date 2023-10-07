@@ -27,9 +27,9 @@ public class Main {
             */
             System.out.println("\n----------- PRUEBA DE CARGA DE DATOS ------------------\n ");
             
-            loader.loadEstudiantes("estudiantes.csv");
-            loader.loadCarrera("carreras.csv");
-            loader.loadEstudianteCarrera("estudianteCarrera.csv");
+            // loader.loadEstudiantes("estudiantes.csv");
+            // loader.loadCarrera("carreras.csv");
+            // loader.loadEstudianteCarrera("estudianteCarrera.csv");
 
             System.out.println("\n----------- FIN PRUEBA DE CARGA DE DATOS ------------------\n ");
              /*
@@ -154,12 +154,34 @@ public class Main {
             System.out.println("\n----------- PRUEBA DE METODOS ESTUDIANTE CARRERA REPOSITORY ------------------\n ");
 
             /* PRUEBA INSERCION */
-             // TODO Prueba metodos de estudiante carrera
+            Estudiante estNuevaMatricula = estuRepo.obtenerPorDni(17331470);
+            Carrera carrNuevaMatricula = carrRepo.obtenerPorId(5);
 
-             System.out.println("\n----------- FIN PRUEBA DE METODOS ESTUDIANTE CARRERA REPOSITORY ------------------\n ");
-             /*
-             *  ----------- FIN PRUEBA DE METODOS ESTUDIANTE CARRERA REPOSITORY ---------------
-             */
+            System.out.println("\nPrueba matriculación de estudiante");
+            System.out.println("\nEstudiante: \n");
+            System.out.println(estNuevaMatricula.getCabeceraTabla());
+            System.out.println(estNuevaMatricula + "\n");
+            System.out.println("\nCarrera: \n");
+            System.out.println(carrNuevaMatricula.getCabeceraTabla());
+            System.out.println(carrNuevaMatricula + "\n");
+
+            estuCarrRepo.matricularEstudiante(estNuevaMatricula, carrNuevaMatricula, 2021, 2023, 2);
+
+            String ciudad = estNuevaMatricula.getCiudad();
+            List<Estudiante> estCarrYCiudadNuevaMatricula = estuRepo.obtenerEstudiantePorCarreraYCiudad(carrNuevaMatricula, ciudad );
+            System.out.println("\nEstudiantes filtrados por ciudad = "+ ciudad +" y carrera ="+carrNuevaMatricula.getNombre()+":\n");
+            System.out.println(estPorNroLibreta.getCabeceraTabla());
+            for (Estudiante estudiante : estCarrYCiudadNuevaMatricula) {
+                System.out.println(estudiante);
+            }
+            System.out.println("\n");
+
+
+
+            System.out.println("\n----------- FIN PRUEBA DE METODOS ESTUDIANTE CARRERA REPOSITORY ------------------\n ");
+            /*
+            *  ----------- FIN PRUEBA DE METODOS ESTUDIANTE CARRERA REPOSITORY ---------------
+            */
             
            
 

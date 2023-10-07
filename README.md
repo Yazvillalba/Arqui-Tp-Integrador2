@@ -4,7 +4,7 @@
    - [x] Carga de datos desde CSV
    - [x] Carrera Repository
    - [x] Estudiante Repository
-   - [] Estudiante Carrera Repository
+   - [x] Estudiante Carrera Repository
 
 
 
