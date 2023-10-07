@@ -3,7 +3,6 @@ package com.integrador2.Interfaces;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
-import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 
@@ -15,10 +14,9 @@ public interface CarreraRepository {
 
     List<Carrera> obtenerTodas();
     
-    CarreraDTO obtenerPorId(int idCarrera);
-    
+    Carrera obtenerPorId(int idCarrera);
+
     void eliminarCarrera(Carrera carrera);
 
     List<ReporteDTO> generarReporteCarreras();
-    Carrera obtenerPorId2(int idCarrera);
 }

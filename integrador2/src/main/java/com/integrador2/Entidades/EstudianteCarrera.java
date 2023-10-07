@@ -1,8 +1,6 @@
 package com.integrador2.Entidades;
 
-import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.DTO.DTO;
-import com.integrador2.Repositories.CarreraRepositoryImpl;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

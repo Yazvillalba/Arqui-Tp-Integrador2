@@ -1,7 +1,6 @@
 package com.integrador2.Repositories;
 
 
-import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Entidades.EstudianteCarrera;

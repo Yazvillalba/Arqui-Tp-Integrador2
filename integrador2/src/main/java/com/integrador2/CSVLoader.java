@@ -7,7 +7,6 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Entidades.Estudiante;
 import com.integrador2.Interfaces.CarreraRepository;
@@ -69,7 +68,7 @@ public class CSVLoader {
                 int idCarrera = Integer.parseInt(row.get("id_carrera"));
                
                 Estudiante estudiante = estudianteRepository.obtenerPorDni(idEstudiante);
-                Carrera carrera = carreraRepository.obtenerPorId2(idCarrera);
+                Carrera carrera = carreraRepository.obtenerPorId(idCarrera);
                 
                 estudianteCarreraRepository.matricularEstudiante(estudiante, carrera, Integer.parseInt(row.get("inscripcion")),Integer.parseInt(row.get("graduacion")),Integer.parseInt(row.get("antiguedad")));
             }

@@ -1,11 +1,9 @@
 package com.integrador2.Repositories;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.integrador2.DTO.CarreraConInscriptosDTO;
-import com.integrador2.DTO.CarreraDTO;
 import com.integrador2.DTO.ReporteDTO;
 import com.integrador2.Entidades.Carrera;
 import com.integrador2.Factory.EntityFactory;
@@ -92,15 +90,15 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     }
 
     @Override
-    public CarreraDTO obtenerPorId(int idCarrera){
+    public Carrera obtenerPorId(int idCarrera){
         EntityManager em = EntityFactory.getInstance().createEntityManager();
-        String jpql = "SELECT new com.integrador2.DTO.CarreraDTO(c.nombre, c.duracion) FROM Carrera c WHERE c.idCarrera=:idCarrera";
+        String jpql = "SELECT c FROM Carrera c WHERE c.idCarrera=:idCarrera";
 
         try {
-            Query query = em.createQuery(jpql, CarreraDTO.class);
+            Query query = em.createQuery(jpql, Carrera.class);
             query.setParameter("idCarrera", idCarrera);
 
-            CarreraDTO carrera =  (CarreraDTO) query.getSingleResult();
+            Carrera carrera =  (Carrera) query.getSingleResult();
             return carrera;
         } finally {
             em.close();
@@ -159,18 +157,5 @@ public class CarreraRepositoryImpl implements CarreraRepository{
 
 
     }
-      public Carrera obtenerPorId2(int idCarrera){
-        EntityManager em = EntityFactory.getInstance().createEntityManager();
-        String jpql = "SELECT c FROM Carrera c WHERE c.idCarrera=:idCarrera";
-
-        try {
-            Query query = em.createQuery(jpql, Carrera.class);
-            query.setParameter("idCarrera", idCarrera);
-
-            Carrera carrera =  (Carrera) query.getSingleResult();
-            return carrera;
-        } finally {
-            em.close();
-        }
-    }
+      
 }

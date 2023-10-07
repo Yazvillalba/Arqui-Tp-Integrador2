@@ -7,22 +7,22 @@ import com.integrador2.Repositories.CarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteCarreraRepositoryImpl;
 import com.integrador2.Repositories.EstudianteRepositoryImpl;
 
-public class FactoryRepositoryImpl implements FactoryRepository{
-    private static FactoryRepositoryImpl factory;
+public class RepositoryFactoryImpl implements RepositoryFactory{
+    private static RepositoryFactoryImpl factory;
 	private final EstudianteRepository estudianteRepository;
 	private final CarreraRepository carreraRepository;
 	private final EstudianteCarreraRepository estudianteCarreraRepository;
 
 
-    public FactoryRepositoryImpl() {
+    public RepositoryFactoryImpl() {
         this.estudianteRepository = new EstudianteRepositoryImpl();
         this.carreraRepository = new CarreraRepositoryImpl();
         this.estudianteCarreraRepository = new EstudianteCarreraRepositoryImpl();
     }
-    public static FactoryRepositoryImpl getInstancia() {
+    public static RepositoryFactoryImpl getInstancia() {
         
 		if(factory == null) {
-			factory = new FactoryRepositoryImpl();
+			factory = new RepositoryFactoryImpl();
 		}
 		return factory;
 	}
