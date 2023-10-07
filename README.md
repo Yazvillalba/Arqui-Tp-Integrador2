@@ -12,10 +12,7 @@
 
  - [x] Revisar que los nombres de las entidades (clases y tablas) respeten estilos de escritura: elegir camelCase o snake_case y respetarlo
  - [ ] Pensar si podriamos renombrar EstudianteCarrera a Matricula 
- ### CONSULTA SERGIO 
- - tenemos un select que no devuelve entidad mapeada DEVUELVE ATRIBUTOS QUE NO ESTAN EN UNA ENTIDAD nro de inscriptos
- no esta en carrera. Se puede crear un dto aparte o se agregan esos datos a la entidad que mas cerca este
- - Datos de los CSV estan mal
+ - [ ] For de reporte carreras se acomodo por error de CASTEO verificar si esta bien  
  ### DTO
 - En el dto Estudiante ver si va la lista de carreras que tiene estudiante.java
 - En el dto de EstudianteCarrera ver si va el estudiante y la carrera que tiene la entidad

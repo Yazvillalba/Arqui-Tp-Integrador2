@@ -27,34 +27,35 @@ public class Main {
             EstudianteRepositoryImpl estudianteRepo = new EstudianteRepositoryImpl();
             CarreraRepositoryImpl carreraRepo = new CarreraRepositoryImpl();
 
-            CarreraDTO carrera = carreraRepo.obtenerPorId(1);
-            System.out.println(carrera.getCabeceraTabla());
-            System.out.println(carrera);
+            // CarreraDTO carrera = carreraRepo.obtenerPorId(1);
+            // System.out.println(carrera.getCabeceraTabla());
+            // System.out.println(carrera);
 
-            // List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
-            
-            // System.out.println(reportes.get(0).getCabeceraTabla());
-            // for (ReporteDTO reporteDTO : reportes) {
-            //     System.out.println(reporteDTO);
-            // }
+            List<ReporteDTO> reportes = carreraRepo.generarReporteCarreras();
 
-            // List<CarreraConInscriptosDTO> inscriptos = carreraRepo.obtenerPorCantInscriptos();
-            
+            System.out.println(reportes.get(0).getCabeceraTabla());
+            for (ReporteDTO reporteDTO : reportes) {
+                System.out.println(reporteDTO);
+            }
+
+            // List<CarreraConInscriptosDTO> inscriptos =
+            // carreraRepo.obtenerPorCantInscriptos();
+
             // System.out.println(inscriptos.get(0).getCabeceraTabla());
             // for (CarreraConInscriptosDTO reporteDTO : inscriptos) {
-            //     System.out.println(reporteDTO);
+            // System.out.println(reporteDTO);
             // }
             // FactoryRepositoryImpl fact = new FactoryRepositoryImpl();
             // CarreraRepository carreraRepos = fact.obtenerCarreraRepository();
             // List<Carrera> todas = carreraRepos.obtenerTodas();
             // for (Carrera carrera : todas) {
-            //     System.out.println(carrera.getNombre());
+            // System.out.println(carrera.getNombre());
             // }
             // List<EstudianteDTO> estudiantes = estudianteRepo.obtenerTodos();
-            
+
             // System.out.println(estudiantes.get(0).getCabeceraTabla());
             // for (EstudianteDTO estudianteDTO : estudiantes) {
-            //      System.out.println(estudianteDTO);
+            // System.out.println(estudianteDTO);
             // }
 
         } catch (Exception e) {

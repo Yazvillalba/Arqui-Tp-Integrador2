@@ -1,6 +1,7 @@
 package com.integrador2.Entidades;
 
 import com.integrador2.DTO.CarreraDTO;
+import com.integrador2.Repositories.CarreraRepositoryImpl;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -24,7 +25,7 @@ public class EstudianteCarrera {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_carrera")
-    private CarreraDTO carrera;
+    private Carrera carrera;
 
     @Column(name="anio_inscripcion")
     private int anioInscripcion;
@@ -39,8 +40,8 @@ public class EstudianteCarrera {
                 + "]";
     }
     
-    public EstudianteCarrera(Estudiante estudiante, CarreraDTO carrera2, int anioInscripcion, int  graduacion, int antiguedad) {
-        this.carrera = carrera2;
+    public EstudianteCarrera(Estudiante estudiante, Carrera carrera, int anioInscripcion, int  graduacion, int antiguedad) {
+        this.carrera = carrera;
         this.estudiante = estudiante;
         this.anioInscripcion = anioInscripcion;
         this.graduacion = graduacion;
@@ -61,10 +62,10 @@ public class EstudianteCarrera {
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
     }
-    public CarreraDTO getCarrera() {
+    public Carrera getCarrera() {
         return carrera;
     }
-    public void setCarrera(CarreraDTO carrera) {
+    public void setCarrera(Carrera carrera) {
         this.carrera = carrera;
     }
     public int getAnioInscripcion() {

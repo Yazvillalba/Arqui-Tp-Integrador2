@@ -111,11 +111,11 @@ public class CarreraRepositoryImpl implements CarreraRepository{
     public List<ReporteDTO> generarReporteCarreras() {
         String jpql = "WITH  "+
         "Inscripciones AS ( "+
-            "SELECT  ec.id_carrera, c.nombre, ec.anioInscripcion AS anio, COUNT(ec.anioInscripcion) AS inscriptos  "+
+            "SELECT  ec.id_carrera, c.nombre, ec.anio_inscripcion AS anio, COUNT(ec.anio_inscripcion) AS inscriptos  "+
                 "FROM EstudianteCarrera ec  "+
                 "JOIN Carrera c  "+
                 "ON c.id_carrera = ec.id_carrera "+
-            "GROUP BY ec.id_carrera, ec.anioInscripcion), "+
+            "GROUP BY ec.id_carrera, ec.anio_inscripcion), "+
          ""+
         "Graduaciones AS (  "+
             "SELECT  ec.id_carrera, c.nombre, NULLIF(ec.graduacion,0) AS anio, COUNT(NULLIF(ec.graduacion,0)) AS graduados  "+
@@ -148,10 +148,16 @@ public class CarreraRepositoryImpl implements CarreraRepository{
             List<Object[]> results =  query.getResultList();
             List<ReporteDTO> reporte = new ArrayList<>();
 
-            for (Object[] r : results){
-                reporte.add(new ReporteDTO((String)r[0],(Long)r[1],(Long)r[2], (Long)r[3]));
+            // for (Object[] r : results){
+            //     reporte.add(new ReporteDTO((String)r[0],(Long)r[1],(Long)r[2], (Long)r[3]));
+            // }
+            for (Object[] r : results) {
+                //Long anio = (r[1] instanceof Long) ? (Long) r[1] : ((Integer) r[1]).longValue();
+                Long inscriptos = (r[2] instanceof Long) ? (Long) r[2] : ((Integer) r[2]).longValue();
+                Long graduados = (r[3] instanceof Long) ? (Long) r[3] : ((Integer) r[3]).longValue();
+                reporte.add(new ReporteDTO((String) r[0], ((Integer) r[1]).longValue(),inscriptos, graduados));
             }
-                
+            
             return reporte;
         }  finally {
             em.close();
@@ -159,5 +165,18 @@ public class CarreraRepositoryImpl implements CarreraRepository{
 
 
     }
+      public Carrera obtenerPorId2(int idCarrera){
+        EntityManager em = EntityFactory.getInstance().createEntityManager();
+        String jpql = "SELECT c FROM Carrera c WHERE c.idCarrera=:idCarrera";
 
+        try {
+            Query query = em.createQuery(jpql, Carrera.class);
+            query.setParameter("idCarrera", idCarrera);
+
+            Carrera carrera =  (Carrera) query.getSingleResult();
+            return carrera;
+        } finally {
+            em.close();
+        }
+    }
 }

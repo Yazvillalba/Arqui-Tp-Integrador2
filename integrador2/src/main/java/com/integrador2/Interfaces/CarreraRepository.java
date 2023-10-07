@@ -20,4 +20,5 @@ public interface CarreraRepository {
     void eliminarCarrera(Carrera carrera);
 
     List<ReporteDTO> generarReporteCarreras();
+    Carrera obtenerPorId2(int idCarrera);
 }

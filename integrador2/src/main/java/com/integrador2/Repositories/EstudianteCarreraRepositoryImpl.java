@@ -13,7 +13,7 @@ import jakarta.persistence.EntityManager;
 public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraRepository{
     
     @Override
-    public void matricularEstudiante(Estudiante estudiante, CarreraDTO carrera, int anioInscripcion, int graduacion, int antiguedad) {
+    public void matricularEstudiante(Estudiante estudiante, Carrera carrera, int anioInscripcion, int graduacion, int antiguedad) {
         EntityManager em = EntityFactory.getInstance().createEntityManager();
         
         EstudianteCarrera estudianteCarrera = new EstudianteCarrera(estudiante, carrera, anioInscripcion, graduacion, antiguedad);
@@ -28,4 +28,6 @@ public class EstudianteCarreraRepositoryImpl implements EstudianteCarreraReposit
             em.close();
         }
     }
+
+    
 }
