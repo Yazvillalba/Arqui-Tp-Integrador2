@@ -1,18 +1,14 @@
 
-## PRUEBAS
-   - [x] RepositoryFactory
-   - [x] Carga de datos desde CSV
-   - [x] Carrera Repository
-   - [x] Estudiante Repository
-   - [x] Estudiante Carrera Repository
+
+## Diagramas
+### Diagrama de clases
+![Diagrama de clases](/diagramas/svg/diagrama-clases.svg)
+
+### Diagrama de Entidad-Relación
+![Diagrama de entidad relación](/diagramas/svg/dere.svg)
 
 
 
-## PROYECTO
- - hacer los diagramas
-   - Hacer dere
-   - hacer diagrama de clases
-   
 ## Errores/inconsistencias encontrados en los datasets
 - En la tabla EstudianteCarrera la fila con id 78 tiene un año de graduación menor que el de inscripción
 - En la tabla EstudianteCarrera la fila con id 91 el año es 202

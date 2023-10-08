@@ -1,0 +1,44 @@
+@startuml name DERE
+'From this guide:
+' https://raphael-leger.medium.com/automatically-generating-up-to-date-database-diagrams-with-typeorm-d1279a20545e
+left to right direction
+skinparam linetype ortho
+hide footbox
+
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+
+
+table(Estudiante){
+  primary_key( dni ): INT 
+  column( nombre ): VARCHAR (255)
+  column( apellido ): VARCHAR (255)
+  column( ciudad ): VARCHAR (255)
+  column( genero ): VARCHAR (255)
+  column( edad ): INT 
+  column( nro_libreta ): INT 
+  ---
+}
+
+table(EstudianteCarrera){
+  primary_key( id ): INT 
+  foreign_key( id_carrera ): INT 
+  foreign_key( id_estudiante ): INT 
+  column( anio_inscripcion ): INT 
+  column( graduacion ): INT 
+  column( antiguedad ): INT 
+  ---
+}
+
+table(Carrera){
+  primary_key( id_carrera ): INT 
+  column( nombre ): VARCHAR (255)
+  column( duracion ): INT 
+  ---
+}
+
+Estudiante ||..|{ EstudianteCarrera
+EstudianteCarrera }|..|| Carrera
+@enduml

@@ -1,0 +1,265 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+class CarreraConInscriptosDTO{
+- id : int
+- nombre : String
+- nroInscriptos : Long
++ CarreraConInscriptosDTO(id : int, nombre : String, nroInscriptos : Long)
++ getNombre() : String
++ getId() : int
++ getNroInscriptos() : Long
++ setNombre(nombre : String) : void
++ getCabeceraTabla() : String
++ toString() : String
+}
+CarreraConInscriptosDTO ..|> Serializable
+CarreraConInscriptosDTO --|> DTO
+class EstudianteCarreraDTO{
+- anioInscripcion : int
+- graduacion : int
+- antiguedad : int
++ EstudianteCarreraDTO(anioInscripcion : int, graduacion : int, antiguedad : int)
++ getAnioInscripcion() : int
++ setAnioInscripcion(anioInscripcion : int) : void
++ getGraduacion() : int
++ setGraduacion(graduacion : int) : void
++ getAntiguedad() : int
++ setAntiguedad(antiguedad : int) : void
+}
+EstudianteCarreraDTO ..|> Serializable
+class RepositoryFactoryImpl{
+- {static} factory : RepositoryFactoryImpl
+- estudianteRepository : EstudianteRepository
+- carreraRepository : CarreraRepository
+- estudianteCarreraRepository : EstudianteCarreraRepository
++ RepositoryFactoryImpl()
++ {static} getInstancia() : RepositoryFactoryImpl
++ obtenerEstudianteRepository() : EstudianteRepository
++ obtenerCarreraRepository() : CarreraRepository
++ obtenerEstudianteCarreraRepository() : EstudianteCarreraRepository
+}
+RepositoryFactoryImpl ..|> RepositoryFactory
+class EstudianteCarreraRepositoryImpl{
++ matricularEstudiante(estudiante : Estudiante, carrera : Carrera, anioInscripcion : int, graduacion : int, antiguedad : int) : void
+}
+EstudianteCarreraRepositoryImpl ..|> EstudianteCarreraRepository
+class Main{
++ {static} main(args : String[]) : void
+}
+class CarreraDTO{
+- nombre : String
+- duracion : int
++ CarreraDTO(nombre : String, duracion : int)
++ CarreraDTO()
++ getNombre() : String
++ setNombre(nombre : String) : void
++ getDuracion() : int
++ setDuracion(duracion : int) : void
++ getCabeceraTabla() : String
++ toString() : String
+}
+CarreraDTO ..|> Serializable
+CarreraDTO --|> DTO
+class Estudiante{
+- dni : int
+- nombre : String
+- apellido : String
+- edad : int
+- genero : String
+- ciudad : String
+- nroLibreta : int
+- carreras : List<EstudianteCarrera>
++ Estudiante(dni : int, nombre : String, apellido : String, edad : int, genero : String, ciudad : String, nroLibreta : int)
++ Estudiante()
++ getNroLibreta() : int
++ setNroLibreta(nroLibreta : int) : void
++ getDni() : int
++ setDni(dni : int) : void
++ getNombre() : String
++ setNombre(nombre : String) : void
++ getApellido() : String
++ setApellido(apellido : String) : void
++ getEdad() : int
++ setEdad(edad : int) : void
++ getGenero() : String
++ setGenero(genero : String) : void
++ getCiudad() : String
++ setCiudad(ciudad : String) : void
++ getCarreras() : List<EstudianteCarrera>
++ setCarreras(carreras : List<EstudianteCarrera>) : void
++ getCabeceraTabla() : String
++ toString() : String
+}
+Estudiante --|> DTO
+class SingletonHelper{
+- {static} INSTANCE : EntityFactory
+}
+class EstudianteRepositoryImpl{
++ agregarEstudiante(estudiante : Estudiante) : void
++ obtenerTodos() : List<Estudiante>
++ obtenerUnoPorLibreta(nroLibreta : int) : Estudiante
++ obtenerTodosPorGenero(genero : String) : List<Estudiante>
++ eliminarEstudiante(estudiante : Estudiante) : void
++ obtenerPorDni(dni : int) : Estudiante
++ obtenerEstudiantePorCarreraYCiudad(carrera : Carrera, ciudad : String) : List<Estudiante>
+}
+EstudianteRepositoryImpl ..|> EstudianteRepository
+class ReporteDTO{
+- nombreCarrera : String
+- anio : Long
+- inscriptos : Long
+- graduados : Long
++ ReporteDTO(nombreCarrera : String, anio : Long, inscriptos : Long, graduados : Long)
++ ReporteDTO()
++ getCabeceraTabla() : String
++ toString() : String
++ getNombreCarrera() : String
++ setNombreCarrera(nombreCarrera : String) : void
++ getAnio() : Long
++ setAnio(anio : Long) : void
++ getInscriptos() : Long
++ setInscriptos(inscriptos : Long) : void
++ getGraduados() : Long
++ setGraduados(graduados : Long) : void
+}
+ReporteDTO ..|> Serializable
+ReporteDTO --|> DTO
+class CSVLoader{
+- estudianteRepository : EstudianteRepository
+- carreraRepository : CarreraRepository
+- estudianteCarreraRepository : EstudianteCarreraRepositoryImpl
++ CSVLoader()
++ getParser(filePath : String) : CSVParser
++ loadEstudiantes(filePath : String) : void
++ loadCarrera(filePath : String) : void
++ loadEstudianteCarrera(filePath : String) : void
+}
+class DTO{
++ {abstract} getCabeceraTabla() : String
+# getNombreEspaciado(name : String, size : Integer) : String
+}
+class CarreraRepositoryImpl{
++ agregarCarrera(carrera : Carrera) : void
++ obtenerPorCantInscriptos() : List<CarreraConInscriptosDTO>
++ eliminarCarrera(carrera : Carrera) : void
++ obtenerTodas() : List<Carrera>
++ obtenerPorId(idCarrera : int) : Carrera
++ generarReporteCarreras() : List<ReporteDTO>
+}
+CarreraRepositoryImpl ..|> CarreraRepository
+class EstudianteDTO{
+- dni : int
+- nombre : String
+- apellido : String
+- edad : int
+- genero : String
+- ciudad : String
+- nroLibreta : int
++ EstudianteDTO(dni : int, nombre : String, apellido : String, edad : int, genero : String, ciudad : String, nroLibreta : int)
++ getDni() : int
++ setDni(dni : int) : void
++ getNombre() : String
++ setNombre(nombre : String) : void
++ getApellido() : String
++ setApellido(apellido : String) : void
++ getEdad() : int
++ setEdad(edad : int) : void
++ getGenero() : String
++ setGenero(genero : String) : void
++ getCiudad() : String
++ setCiudad(ciudad : String) : void
++ getNroLibreta() : int
++ setNroLibreta(nroLibreta : int) : void
++ getCabeceraTabla() : String
++ toString() : String
+}
+EstudianteDTO ..|> Serializable
+EstudianteDTO --|> DTO
+class EntityFactory{
+- emf : EntityManagerFactory
+- EntityFactory()
++ {static} getInstance() : EntityFactory
++ createEntityManager() : EntityManager
++ closeEntityManagerFactory() : void
+}
+class Carrera{
+- idCarrera : int
+- nombre : String
+- duracion : int
+- estudiantes : List<EstudianteCarrera>
++ Carrera(nombre : String, duracion : int)
++ Carrera()
++ getId() : int
++ getNombre() : String
++ getDuracion() : int
++ getEstudiantes() : List<EstudianteCarrera>
++ setId(id : int) : void
++ setNombre(nombre : String) : void
++ setDuracion(duracion : int) : void
++ setEstudiantes(estudiantes : List<EstudianteCarrera>) : void
++ getCabeceraTabla() : String
++ toString() : String
+}
+Carrera --|> DTO
+class EstudianteCarrera{
+- id : int
+- estudiante : Estudiante
+- carrera : Carrera
+- anioInscripcion : int
+- graduacion : int
+- antiguedad : int
++ EstudianteCarrera(estudiante : Estudiante, carrera : Carrera, anioInscripcion : int, graduacion : int, antiguedad : int)
++ EstudianteCarrera()
++ toString() : String
++ getId() : int
++ setId(id : int) : void
++ getEstudiante() : Estudiante
++ setEstudiante(estudiante : Estudiante) : void
++ getCarrera() : Carrera
++ setCarrera(carrera : Carrera) : void
++ getAnioInscripcion() : int
++ setAnioInscripcion(anioInscripcion : int) : void
++ getAntiguedad() : int
++ setAntiguedad(antiguedad : int) : void
++ isGraduacion() : int
++ setGraduacion(graduacion : int) : void
++ getCabeceraTabla() : String
+}
+EstudianteCarrera --|> DTO
+RepositoryFactoryImpl--"- {static} factory" RepositoryFactoryImpl
+RepositoryFactoryImpl--"- estudianteRepository" EstudianteRepository
+RepositoryFactoryImpl--"- carreraRepository" CarreraRepository
+RepositoryFactoryImpl--"- estudianteCarreraRepository" EstudianteCarreraRepository
+SingletonHelper--"- {static} INSTANCE" EntityFactory
+CSVLoader--"- estudianteRepository" EstudianteRepository
+CSVLoader--"- carreraRepository" CarreraRepository
+CSVLoader--"- estudianteCarreraRepository" EstudianteCarreraRepositoryImpl
+EstudianteCarrera--"- estudiante" Estudiante
+EstudianteCarrera--"- carrera" Carrera
+interface RepositoryFactory{
+obtenerEstudianteRepository() : EstudianteRepository
+obtenerCarreraRepository() : CarreraRepository
+obtenerEstudianteCarreraRepository() : EstudianteCarreraRepository
+}
+interface CarreraRepository{
+agregarCarrera(carrera : Carrera) : void
+obtenerPorId(idCarrera : int) : Carrera
+obtenerTodas() : List<Carrera>
+obtenerPorCantInscriptos() : List<CarreraConInscriptosDTO>
+eliminarCarrera(carrera : Carrera) : void
+generarReporteCarreras() : List<ReporteDTO>
+}
+interface EstudianteRepository{
+agregarEstudiante(estudiante : Estudiante) : void
+obtenerTodos() : List<Estudiante>
+obtenerPorDni(dni : int) : Estudiante
+obtenerUnoPorLibreta(nroLibreta : int) : Estudiante
+obtenerTodosPorGenero(genero : String) : List<Estudiante>
+eliminarEstudiante(estudiante : Estudiante) : void
+obtenerEstudiantePorCarreraYCiudad(carrera : Carrera, ciudad : String) : List<Estudiante>
+}
+interface EstudianteCarreraRepository{
+matricularEstudiante(estudiante : Estudiante, carrera : Carrera, anioInscripcion : int, graduacion : int, antiguedad : int) : void
+}
+@enduml

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="185px" preserveAspectRatio="none" style="width:667px;height:185px;background:#FFFFFF;" version="1.1" viewBox="0 0 667 185" width="667px" zoomAndPan="magnify"><defs/><g><!--MD5=[9196e7f5424c8ba52e10312e1fe81956]
+class Estudiante--><g id="elem_Estudiante"><rect codeLine="13" fill="#F1F1F1" height="171.2656" id="Estudiante" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="188.3333" x="7" y="7"/><ellipse cx="63.4167" cy="23" fill="#FFFFFF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M64.3385,20.3906 L64.3385,27.0469 L65.4948,27.0469 Q66.1042,27.0469 66.3542,27.2813 Q66.6198,27.5156 66.6198,27.9063 Q66.6198,28.2813 66.3542,28.5156 Q66.1042,28.75 65.4948,28.75 L61.5104,28.75 Q60.8854,28.75 60.6198,28.5156 Q60.3698,28.2813 60.3698,27.8906 Q60.3698,27.5156 60.6198,27.2813 Q60.8854,27.0469 61.5104,27.0469 L62.6354,27.0469 L62.6354,20.3906 L60.7917,20.3906 L60.7917,22 Q60.7917,22.6094 60.5573,22.875 Q60.3229,23.1406 59.9479,23.1406 Q59.5729,23.1406 59.3385,22.875 Q59.1042,22.6094 59.1042,22 L59.1042,18.6875 L67.9167,18.6875 L67.9167,22 Q67.9167,22.6094 67.6667,22.875 Q67.4323,23.1406 67.0573,23.1406 Q66.6823,23.1406 66.4479,22.875 Q66.2135,22.6094 66.2135,22 L66.2135,20.3906 L64.3385,20.3906 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="83.9167" y="28.7285">Estudiante</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="194.3333" y1="39" y2="39"/><path d="M20.4167,47.776 C18.8067,47.776 17.5,49.0827 17.5,50.6927 C17.5,50.8794 17.5,51.066 17.535,51.241 L14,54.776 L14,57.1094 L17.5,57.1094 L17.5,54.776 L19.8333,54.776 L19.8333,53.6094 L19.8683,53.5744 C20.0433,53.6094 20.23,53.6094 20.4167,53.6094 C22.0267,53.6094 23.3333,52.3027 23.3333,50.6927 C23.3333,49.0827 22.0267,47.776 20.4167,47.776 M21,48.9427 C21.6417,48.9427 22.1667,49.4677 22.1667,50.1094 C22.1667,50.751 21.6417,51.276 21,51.276 C20.3583,51.276 19.8333,50.751 19.8333,50.1094 C19.8333,49.4677 20.3583,48.9427 21,48.9427 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="22" x="28.3333" y="57.5332">dni</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="50.3333" y="57.5332">: INT</text><path d="M17.5,65.3854 C15.5633,65.3854 14,66.9487 14,68.8854 C14,70.8221 15.5633,72.3854 17.5,72.3854 C19.4367,72.3854 21,70.8221 21,68.8854 C21,66.9487 19.4367,65.3854 17.5,65.3854 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="28.3333" y="75.1426">nombre: VARCHAR (255)</text><path d="M17.5,82.9948 C15.5633,82.9948 14,84.5581 14,86.4948 C14,88.4315 15.5633,89.9948 17.5,89.9948 C19.4367,89.9948 21,88.4315 21,86.4948 C21,84.5581 19.4367,82.9948 17.5,82.9948 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="28.3333" y="92.752">apellido: VARCHAR (255)</text><path d="M17.5,100.6042 C15.5633,100.6042 14,102.1675 14,104.1042 C14,106.0408 15.5633,107.6042 17.5,107.6042 C19.4367,107.6042 21,106.0408 21,104.1042 C21,102.1675 19.4367,100.6042 17.5,100.6042 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="28.3333" y="110.3613">ciudad: VARCHAR (255)</text><path d="M17.5,118.2135 C15.5633,118.2135 14,119.7769 14,121.7135 C14,123.6502 15.5633,125.2135 17.5,125.2135 C19.4367,125.2135 21,123.6502 21,121.7135 C21,119.7769 19.4367,118.2135 17.5,118.2135 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="28.3333" y="127.9707">genero: VARCHAR (255)</text><path d="M17.5,135.8229 C15.5633,135.8229 14,137.3863 14,139.3229 C14,141.2596 15.5633,142.8229 17.5,142.8229 C19.4367,142.8229 21,141.2596 21,139.3229 C21,137.3863 19.4367,135.8229 17.5,135.8229 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="28.3333" y="145.5801">edad: INT</text><path d="M17.5,153.4323 C15.5633,153.4323 14,154.9956 14,156.9323 C14,158.869 15.5633,160.4323 17.5,160.4323 C19.4367,160.4323 21,158.869 21,156.9323 C21,154.9956 19.4367,153.4323 17.5,153.4323 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="28.3333" y="163.1895">nro_libreta: INT</text><line style="stroke:#181818;stroke-width:1.0;" x1="8" x2="194.3333" y1="170.2656" y2="170.2656"/></g><!--MD5=[5bebf8d449f3350e192e92c7b35d6640]
+class EstudianteCarrera--><g id="elem_EstudianteCarrera"><rect codeLine="24" fill="#F1F1F1" height="153.6563" id="EstudianteCarrera" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="158.3333" x="255" y="15.5"/><ellipse cx="274.65" cy="31.5" fill="#FFFFFF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M275.5719,28.8906 L275.5719,35.5469 L276.7281,35.5469 Q277.3375,35.5469 277.5875,35.7813 Q277.8531,36.0156 277.8531,36.4063 Q277.8531,36.7813 277.5875,37.0156 Q277.3375,37.25 276.7281,37.25 L272.7438,37.25 Q272.1188,37.25 271.8531,37.0156 Q271.6031,36.7813 271.6031,36.3906 Q271.6031,36.0156 271.8531,35.7813 Q272.1188,35.5469 272.7438,35.5469 L273.8688,35.5469 L273.8688,28.8906 L272.025,28.8906 L272.025,30.5 Q272.025,31.1094 271.7906,31.375 Q271.5563,31.6406 271.1813,31.6406 Q270.8063,31.6406 270.5719,31.375 Q270.3375,31.1094 270.3375,30.5 L270.3375,27.1875 L279.15,27.1875 L279.15,30.5 Q279.15,31.1094 278.9,31.375 Q278.6656,31.6406 278.2906,31.6406 Q277.9156,31.6406 277.6813,31.375 Q277.4469,31.1094 277.4469,30.5 L277.4469,28.8906 L275.5719,28.8906 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="289.6833" y="37.2285">EstudianteCarrera</text><line style="stroke:#181818;stroke-width:0.5;" x1="256" x2="412.3333" y1="47.5" y2="47.5"/><path d="M268.4167,56.276 C266.8067,56.276 265.5,57.5827 265.5,59.1927 C265.5,59.3794 265.5,59.566 265.535,59.741 L262,63.276 L262,65.6094 L265.5,65.6094 L265.5,63.276 L267.8333,63.276 L267.8333,62.1094 L267.8683,62.0744 C268.0433,62.1094 268.23,62.1094 268.4167,62.1094 C270.0267,62.1094 271.3333,60.8027 271.3333,59.1927 C271.3333,57.5827 270.0267,56.276 268.4167,56.276 M269,57.4427 C269.6417,57.4427 270.1667,57.9677 270.1667,58.6094 C270.1667,59.251 269.6417,59.776 269,59.776 C268.3583,59.776 267.8333,59.251 267.8333,58.6094 C267.8333,57.9677 268.3583,57.4427 269,57.4427 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="13" x="276.3333" y="66.0332">id</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="289.3333" y="66.0332">: INT</text><path d="M268.4167,73.8854 C266.8067,73.8854 265.5,75.1921 265.5,76.8021 C265.5,76.9888 265.5,77.1754 265.535,77.3504 L262,80.8854 L262,83.2187 L265.5,83.2187 L265.5,80.8854 L267.8333,80.8854 L267.8333,79.7187 L267.8683,79.6837 C268.0433,79.7187 268.23,79.7187 268.4167,79.7187 C270.0267,79.7187 271.3333,78.4121 271.3333,76.8021 C271.3333,75.1921 270.0267,73.8854 268.4167,73.8854 M269,75.0521 C269.6417,75.0521 270.1667,75.5771 270.1667,76.2187 C270.1667,76.8604 269.6417,77.3854 269,77.3854 C268.3583,77.3854 267.8333,76.8604 267.8333,76.2187 C267.8333,75.5771 268.3583,75.0521 269,75.0521 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="276.3333" y="83.6426">id_carrera: INT</text><path d="M268.4167,91.4948 C266.8067,91.4948 265.5,92.8015 265.5,94.4115 C265.5,94.5981 265.5,94.7848 265.535,94.9598 L262,98.4948 L262,100.8281 L265.5,100.8281 L265.5,98.4948 L267.8333,98.4948 L267.8333,97.3281 L267.8683,97.2931 C268.0433,97.3281 268.23,97.3281 268.4167,97.3281 C270.0267,97.3281 271.3333,96.0215 271.3333,94.4115 C271.3333,92.8015 270.0267,91.4948 268.4167,91.4948 M269,92.6615 C269.6417,92.6615 270.1667,93.1865 270.1667,93.8281 C270.1667,94.4698 269.6417,94.9948 269,94.9948 C268.3583,94.9948 267.8333,94.4698 267.8333,93.8281 C267.8333,93.1865 268.3583,92.6615 269,92.6615 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="276.3333" y="101.252">id_estudiante: INT</text><path d="M265.5,109.1042 C263.5633,109.1042 262,110.6675 262,112.6042 C262,114.5408 263.5633,116.1042 265.5,116.1042 C267.4367,116.1042 269,114.5408 269,112.6042 C269,110.6675 267.4367,109.1042 265.5,109.1042 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="276.3333" y="118.8613">anio_inscripcion: INT</text><path d="M265.5,126.7135 C263.5633,126.7135 262,128.2769 262,130.2135 C262,132.1502 263.5633,133.7135 265.5,133.7135 C267.4367,133.7135 269,132.1502 269,130.2135 C269,128.2769 267.4367,126.7135 265.5,126.7135 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="276.3333" y="136.4707">graduacion: INT</text><path d="M265.5,144.3229 C263.5633,144.3229 262,145.8863 262,147.8229 C262,149.7596 263.5633,151.3229 265.5,151.3229 C267.4367,151.3229 269,149.7596 269,147.8229 C269,145.8863 267.4367,144.3229 265.5,144.3229 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="276.3333" y="154.0801">antiguedad: INT</text><line style="stroke:#181818;stroke-width:1.0;" x1="256" x2="412.3333" y1="161.1563" y2="161.1563"/></g><!--MD5=[6c12453d355242fc13a0fab73bb902ea]
+class Carrera--><g id="elem_Carrera"><rect codeLine="34" fill="#F1F1F1" height="100.8281" id="Carrera" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="187.3333" x="473" y="42"/><ellipse cx="537.9167" cy="58" fill="#FFFFFF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M538.8385,55.3906 L538.8385,62.0469 L539.9948,62.0469 Q540.6042,62.0469 540.8542,62.2813 Q541.1198,62.5156 541.1198,62.9063 Q541.1198,63.2813 540.8542,63.5156 Q540.6042,63.75 539.9948,63.75 L536.0104,63.75 Q535.3854,63.75 535.1198,63.5156 Q534.8698,63.2813 534.8698,62.8906 Q534.8698,62.5156 535.1198,62.2813 Q535.3854,62.0469 536.0104,62.0469 L537.1354,62.0469 L537.1354,55.3906 L535.2917,55.3906 L535.2917,57 Q535.2917,57.6094 535.0573,57.875 Q534.8229,58.1406 534.4479,58.1406 Q534.0729,58.1406 533.8385,57.875 Q533.6042,57.6094 533.6042,57 L533.6042,53.6875 L542.4167,53.6875 L542.4167,57 Q542.4167,57.6094 542.1667,57.875 Q541.9323,58.1406 541.5573,58.1406 Q541.1823,58.1406 540.9479,57.875 Q540.7135,57.6094 540.7135,57 L540.7135,55.3906 L538.8385,55.3906 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="558.4167" y="63.7285">Carrera</text><line style="stroke:#181818;stroke-width:0.5;" x1="474" x2="659.3333" y1="74" y2="74"/><path d="M486.4167,82.776 C484.8067,82.776 483.5,84.0827 483.5,85.6927 C483.5,85.8794 483.5,86.066 483.535,86.241 L480,89.776 L480,92.1094 L483.5,92.1094 L483.5,89.776 L485.8333,89.776 L485.8333,88.6094 L485.8683,88.5744 C486.0433,88.6094 486.23,88.6094 486.4167,88.6094 C488.0267,88.6094 489.3333,87.3027 489.3333,85.6927 C489.3333,84.0827 488.0267,82.776 486.4167,82.776 M487,83.9427 C487.6417,83.9427 488.1667,84.4677 488.1667,85.1094 C488.1667,85.751 487.6417,86.276 487,86.276 C486.3583,86.276 485.8333,85.751 485.8333,85.1094 C485.8333,84.4677 486.3583,83.9427 487,83.9427 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="72" x="494.3333" y="92.5332">id_carrera</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="566.3333" y="92.5332">: INT</text><path d="M483.5,100.3854 C481.5633,100.3854 480,101.9487 480,103.8854 C480,105.8221 481.5633,107.3854 483.5,107.3854 C485.4367,107.3854 487,105.8221 487,103.8854 C487,101.9487 485.4367,100.3854 483.5,100.3854 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="494.3333" y="110.1426">nombre: VARCHAR (255)</text><path d="M483.5,117.9948 C481.5633,117.9948 480,119.5581 480,121.4948 C480,123.4315 481.5633,124.9948 483.5,124.9948 C485.4367,124.9948 487,123.4315 487,121.4948 C487,119.5581 485.4367,117.9948 483.5,117.9948 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="494.3333" y="127.752">duracion: INT</text><line style="stroke:#181818;stroke-width:1.0;" x1="474" x2="659.3333" y1="134.8281" y2="134.8281"/></g><!--MD5=[6e7ce2ec98520d63aa3fc4168a831570]
+link Estudiante to EstudianteCarrera--><g id="link_Estudiante_EstudianteCarrera"><path codeLine="41" d="M203.1,92.5 C203.1,92.5 246.87,92.5 246.87,92.5 " fill="none" id="Estudiante-EstudianteCarrera" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="246.87" x2="254.87" y1="92.5" y2="86.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="246.87" x2="254.87" y1="92.5" y2="98.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="246.87" x2="254.87" y1="92.5" y2="92.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="244.87" x2="244.87" y1="88.5" y2="96.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="199.1" x2="199.1" y1="96.5" y2="88.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="202.1" x2="202.1" y1="96.5" y2="88.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="203.1" x2="195.1" y1="92.5" y2="92.5"/></g><!--MD5=[59018797c2757c9cc0478a0fb12fdead]
+link EstudianteCarrera to Carrera--><g id="link_EstudianteCarrera_Carrera"><path codeLine="42" d="M421.04,92.5 C421.04,92.5 464.82,92.5 464.82,92.5 " fill="none" id="EstudianteCarrera-Carrera" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="468.82" x2="468.82" y1="88.5" y2="96.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="465.82" x2="465.82" y1="88.5" y2="96.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="464.82" x2="472.82" y1="92.5" y2="92.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="421.04" x2="413.04" y1="92.5" y2="98.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="421.04" x2="413.04" y1="92.5" y2="86.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="421.04" x2="413.04" y1="92.5" y2="92.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="423.04" x2="423.04" y1="96.5" y2="88.5"/></g><!--MD5=[8b03282929ee3a842b7bd26409b84bc7]
+@startuml name DERE
+'From this guide:
+' https://raphael-leger.medium.com/automatically-generating-up-to-date-database-diagrams-with-typeorm-d1279a20545e
+left to right direction
+skinparam linetype ortho
+hide footbox
+
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+
+
+table(Estudiante){
+  primary_key( dni ): INT 
+  column( nombre ): VARCHAR (255)
+  column( apellido ): VARCHAR (255)
+  column( ciudad ): VARCHAR (255)
+  column( genero ): VARCHAR (255)
+  column( edad ): INT 
+  column( nro_libreta ): INT 
+  - - -
+}
+
+table(EstudianteCarrera){
+  primary_key( id ): INT 
+  foreign_key( id_carrera ): INT 
+  foreign_key( id_estudiante ): INT 
+  column( anio_inscripcion ): INT 
+  column( graduacion ): INT 
+  column( antiguedad ): INT 
+  - - -
+}
+
+table(Carrera){
+  primary_key( id_carrera ): INT 
+  column( nombre ): VARCHAR (255)
+  column( duracion ): INT 
+  - - -
+}
+
+Estudiante ||..|{ EstudianteCarrera
+EstudianteCarrera }|..|| Carrera
+@enduml
+
+@startuml name DERE
+left to right direction
+skinparam linetype ortho
+hide footbox
+
+
+
+entity Estudiante << (T, white) >>{
+  <b><color:#b8861b><&key></color> dni</b>: INT 
+  <color:#efefef><&media-record></color> nombre: VARCHAR (255)
+  <color:#efefef><&media-record></color> apellido: VARCHAR (255)
+  <color:#efefef><&media-record></color> ciudad: VARCHAR (255)
+  <color:#efefef><&media-record></color> genero: VARCHAR (255)
+  <color:#efefef><&media-record></color> edad: INT 
+  <color:#efefef><&media-record></color> nro_libreta: INT 
+  - - -
+}
+
+entity EstudianteCarrera << (T, white) >>{
+  <b><color:#b8861b><&key></color> id</b>: INT 
+  <color:#aaaaaa><&key></color> id_carrera: INT 
+  <color:#aaaaaa><&key></color> id_estudiante: INT 
+  <color:#efefef><&media-record></color> anio_inscripcion: INT 
+  <color:#efefef><&media-record></color> graduacion: INT 
+  <color:#efefef><&media-record></color> antiguedad: INT 
+  - - -
+}
+
+entity Carrera << (T, white) >>{
+  <b><color:#b8861b><&key></color> id_carrera</b>: INT 
+  <color:#efefef><&media-record></color> nombre: VARCHAR (255)
+  <color:#efefef><&media-record></color> duracion: INT 
+  - - -
+}
+
+Estudiante ||..|{ EstudianteCarrera
+EstudianteCarrera }|..|| Carrera
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 14:01:30 ART 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
